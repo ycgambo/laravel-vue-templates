@@ -16,6 +16,7 @@ abstract class Theme
     protected $namespace;
     protected $alias;
     protected $with;
+    protected $inject;
 
     public function __construct($namespace, $alias, $from)
     {
@@ -35,12 +36,24 @@ abstract class Theme
         return $this;
     }
 
+    public function inject($blade)
+    {
+        $this->inject = $blade;
+        return $this;
+    }
+
     public function boot()
     {
         $viewName = "$this->namespace::layouts.$this->from.main";
 
         View::addNamespace($this->namespace, $this->viewPath());
-        Blade::component($viewName, $this->alias);
+
+        if (empty($this->inject)) {
+            Blade::component($viewName, $this->alias);
+        } else {
+            Blade::component($viewName, "inject-{$this->alias}");
+            Blade::component($this->inject, $this->alias);
+        }
 
         // 加载当前view的时候再创建绑定，防止同一个主题使用多次时变量被覆盖
         View::creator($viewName, function ($view) {
