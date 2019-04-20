@@ -1,0 +1,27 @@
+{
+  "name": "ycgambo/laravel-vue-templates",
+  "type": "library",
+  "description": "A Laravel admin template to use Vue tags in blades",
+  "keywords": [
+    "laravel",
+    "blade",
+    "vue",
+    "admin"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ycgambo",
+      "email": "ycgambo@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "laravel/framework": "5.6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "LVT\\": "src/"
+    }
+  }
+}
