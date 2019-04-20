@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title }}</title>
+    <title>{{ isset($title) ? $title: '' }}</title>
 
     <link href="{{ $theme->mix('/css/loading.css') }}" rel="stylesheet">
     <link href="{{ $theme->mix('/css/app.css') }}" rel="stylesheet">
-    {{ $header }}
+    {{ isset($header) ? $header: '' }}
 </head>
 
 <body>
@@ -53,11 +53,11 @@
         </template>
 
         <template slot="header">
-            {{ $header_left }}
+            {{ isset($header_left) ? $header_left: '' }}
         </template>
 
         <template slot="header-right">
-            {{ $header_right }}
+            {{ isset($header_right) ? $header_right: '' }}
         </template>
 
         <template id="app-content">
@@ -66,10 +66,10 @@
     </layout-sidebar>
 </div>
 
-<script src="{{ $theme->mix('js/manifest.js') }}"></script>
-<script src="{{ $theme->mix('js/vendor.js') }}"></script>
-<script src="{{ $theme->mix('js/app.js') }}"></script>
-{{ $footer }}
+<script src="{{ $theme->mix('/js/manifest.js') }}"></script>
+<script src="{{ $theme->mix('/js/vendor.js') }}"></script>
+<script src="{{ $theme->mix('/js/app.js') }}"></script>
+{{ isset($footer) ? $footer: '' }}
 </body>
 </html>
 

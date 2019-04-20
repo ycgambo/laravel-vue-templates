@@ -37,7 +37,7 @@ abstract class Theme
 
     public function boot()
     {
-        $viewName = "$this->namespace::$this->from";
+        $viewName = "$this->namespace::layouts.$this->from.main";
 
         View::addNamespace($this->namespace, $this->viewPath());
         Blade::component($viewName, $this->alias);

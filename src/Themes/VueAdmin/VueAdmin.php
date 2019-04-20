@@ -13,7 +13,7 @@ class VueAdmin extends \LVT\Theme
 
     public function viewPath()
     {
-        return __DIR__;
+        return __DIR__ . '/views';
     }
 
     public function view($path)
