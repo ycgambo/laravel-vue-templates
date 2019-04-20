@@ -16,8 +16,8 @@ class ThemeServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'Themes/VueAdmin/public'
-            ], public_path(VueAdmin::RESOURCE_DIR));
+                __DIR__.'/Themes/VueAdmin/public' => public_path(VueAdmin::RESOURCE_DIR)
+            ], 'public');
         }
     }
 

@@ -9,8 +9,8 @@
 
     <title>{{ $title }}</title>
 
-    <link href="{{ \LVT\Themes\VueAdmin\VueAdmin::mix('/css/loading.css') }}" rel="stylesheet">
-    <link href="{{ \LVT\Themes\VueAdmin\VueAdmin::mix('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ $theme->mix('/css/loading.css') }}" rel="stylesheet">
+    <link href="{{ $theme->mix('/css/app.css') }}" rel="stylesheet">
     {{ $header }}
 </head>
 
@@ -46,9 +46,9 @@
     <layout-sidebar>
         <template slot="menu">
             @if(isset($menus))
-                @include(\LVT\Themes\VueAdmin\VueAdmin::view('layouts.main.menu'), ['menus' => $menus])
+                @include($theme->view('layouts.main.menu'), ['menus' => $menus])
             @else
-                @include(\LVT\Themes\VueAdmin\VueAdmin::view('layouts.main.no-menu'))
+                @include($theme->view('layouts.main.no-menu'))
             @endif
         </template>
 
@@ -66,9 +66,9 @@
     </layout-sidebar>
 </div>
 
-<script src="{{ \LVT\Themes\VueAdmin\VueAdmin::mix('js/manifest.js') }}"></script>
-<script src="{{ \LVT\Themes\VueAdmin\VueAdmin::mix('js/vendor.js') }}"></script>
-<script src="{{ \LVT\Themes\VueAdmin\VueAdmin::mix('js/app.js') }}"></script>
+<script src="{{ $theme->mix('js/manifest.js') }}"></script>
+<script src="{{ $theme->mix('js/vendor.js') }}"></script>
+<script src="{{ $theme->mix('js/app.js') }}"></script>
 {{ $footer }}
 </body>
 </html>

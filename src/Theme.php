@@ -37,15 +37,16 @@ abstract class Theme
 
     public function boot()
     {
-        $viewName = $this->namespace . View::HINT_PATH_DELIMITER . $this->from;
+        $viewName = "$this->namespace::$this->from";
 
         View::addNamespace($this->namespace, $this->viewPath());
         Blade::component($viewName, $this->alias);
 
         // 加载当前view的时候再创建绑定，防止同一个主题使用多次时变量被覆盖
         View::creator($viewName, function ($view) {
+            $view->with('theme', $this);
             foreach ($this->with as $key => $value) {
-                $view::with($key, $value);
+                $view->with($key, $value);
             }
         });
     }

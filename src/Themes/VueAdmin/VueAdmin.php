@@ -18,7 +18,7 @@ class VueAdmin extends \LVT\Theme
 
     public function view($path)
     {
-        return __DIR__ . DIRECTORY_SEPARATOR . $path;
+        return "$this->namespace::$path";
     }
 
     public function mix($path)

@@ -18,7 +18,7 @@
                 <span slot="title">{{$menu['name']}}</span>
             </template>
 
-            @include(\LVT\Themes\VueAdmin\VueAdmin::view('layouts.vue-admin.menu'), ['menus' => $menu['sub'], 'sub' => true, 'path' => "$path-$id"])
+            @include($theme->view('layouts.vue-admin.menu'), ['menus' => $menu['sub'], 'sub' => true, 'path' => "$path-$id"])
         </el-submenu>
     @endif
 @endforeach
