@@ -56,7 +56,7 @@ If you want to extend it:
 
     VueAdmin::create($namespace, 'example')->inject('admin.base')->with('menus', $menus)->boot();
 
-You can inject it into a base blade:
+You can inject it in you admin.base blade:
 
 ```php
 @inject-example
