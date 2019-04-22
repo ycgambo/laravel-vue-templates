@@ -51,7 +51,7 @@ abstract class Theme
         if (empty($this->inject)) {
             Blade::component($viewName, $this->alias);
         } else {
-            Blade::component($viewName, "inject-{$this->alias}");
+            Blade::component($viewName, "_{$this->alias}");
             Blade::component($this->inject, $this->alias);
         }
 

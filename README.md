@@ -56,12 +56,12 @@ If you want to extend it:
 
     VueAdmin::create($namespace, 'example')->inject('admin.base')->with('menus', $menus)->boot();
 
-You can inject it in you admin.base blade:
+You can then inject it by using `_example` in you admin.base blade:
 
 ```php
-@inject-example
+@_example
     @slot('header')
-        {{-- commonly used css --}}
+        {{-- commonly used css --}}_
         @yield('header') {{-- expose for subpages --}}
     @endslot
     
@@ -75,7 +75,7 @@ You can inject it in you admin.base blade:
         {{-- page footer, commonly used js --}}
         @yield('js') {{-- expose for subpages --}}
     @endslot
-@endinject-example
+@end_example
 ```
 
 And use injected blades:
