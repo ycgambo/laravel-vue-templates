@@ -57,7 +57,7 @@ abstract class Theme
 
         // 加载当前view的时候再创建绑定，防止同一个主题使用多次时变量被覆盖
         View::creator($viewName, function ($view) {
-            $view->with('theme', $this);
+            $view->with('__theme', $this);
             foreach ($this->with as $key => $value) {
                 $view->with($key, $value);
             }

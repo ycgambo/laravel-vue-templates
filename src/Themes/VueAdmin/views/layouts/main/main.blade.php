@@ -9,8 +9,8 @@
 
     <title>{{ isset($title) ? $title: '' }}</title>
 
-    <link href="{{ $theme->mix('/css/loading.css') }}" rel="stylesheet">
-    <link href="{{ $theme->mix('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ $__theme->mix('/css/loading.css') }}" rel="stylesheet">
+    <link href="{{ $__theme->mix('/css/app.css') }}" rel="stylesheet">
     {{ isset($header) ? $header: '' }}
 </head>
 
@@ -46,9 +46,9 @@
     <layout-sidebar>
         <template slot="menu">
             @if(isset($menus))
-                @include($theme->view('layouts.main.menu'), ['menus' => $menus])
+                @include($__theme->view('layouts.main.menu'), ['menus' => $menus])
             @else
-                @include($theme->view('layouts.main.no-menu'))
+                @include($__theme->view('layouts.main.no-menu'))
             @endif
         </template>
 
@@ -66,9 +66,9 @@
     </layout-sidebar>
 </div>
 
-<script src="{{ $theme->mix('/js/manifest.js') }}"></script>
-<script src="{{ $theme->mix('/js/vendor.js') }}"></script>
-<script src="{{ $theme->mix('/js/app.js') }}"></script>
+<script src="{{ $__theme->mix('/js/manifest.js') }}"></script>
+<script src="{{ $__theme->mix('/js/vendor.js') }}"></script>
+<script src="{{ $__theme->mix('/js/app.js') }}"></script>
 {{ isset($footer) ? $footer: '' }}
 </body>
 </html>

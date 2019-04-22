@@ -52,7 +52,20 @@ And use in blades:
 @endexample
 ```
 
-If you want to extend it:
+The `menus` is an array like: 
+
+```php
+$menus = [
+//  ['id' => 'menu id', 'name' => 'menu name', 'icon' => 'menu icon'，'url' => 'which url to redirect', 'sub' => 'for sub menus', ],
+
+    ['id' => 'home', 'name' => 'Home', 'icon' => 'fa-tachometer'，'url' => '/home', ],
+    ['id' => 'layout', 'name' => 'Layouts', 'icon' => 'fa-tachometer', 'sub' => [
+        ['id' => 'vue-admin', 'name' => 'Vue Admin', 'icon' => 'fa-tachometer'，'url' => '/layout/vue-admin', ],
+    ]],
+];
+```
+
+If you want to extend the layout:
 
     VueAdmin::create($namespace, 'example')->inject('admin.base')->with('menus', $menus)->boot();
 
@@ -95,10 +108,4 @@ And use injected blades:
     @endsection
 @endexample
 ```
-
-Or if you want to extend it:
-
-
-
-
 

@@ -1,7 +1,7 @@
 @php(isset($path) or $path = 'm')
 @foreach($menus as $id => $menu)
     @if(empty($menu['sub']))
-        <a href="{{$menu['url']}}" index="{{"$path-$id"}}">
+        <a href="{{$menu['url']}}" index="{{$menu['id'] ?? "$path-$id"}}">
             <el-menu-item index="{{"$path-$id"}}">
                 @if(empty($sub) && !empty($menu['icon']))
                     <i class="fa {{$menu['icon']}}"></i>
@@ -10,7 +10,7 @@
             </el-menu-item>
         </a>
     @else
-        <el-submenu index="{{"$path-$id"}}">
+        <el-submenu index="{{$menu['id'] ?? "$path-$id"}}">
             <template slot="title">
                 @if(empty($sub) && !empty($menu['icon']))
                     <i class="fa {{$menu['icon']}}"></i>
