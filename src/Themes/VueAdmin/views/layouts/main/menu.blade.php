@@ -18,7 +18,7 @@
                 <span slot="title">{{$menu['name']}}</span>
             </template>
 
-            @include($theme->view('layouts.main.menu'), ['menus' => $menu['sub'], 'sub' => true, 'path' => "$path-$id"])
+            @include($__theme->view('layouts.main.menu'), ['menus' => $menu['sub'], 'sub' => true, 'path' => "$path-$id"])
         </el-submenu>
     @endif
 @endforeach
