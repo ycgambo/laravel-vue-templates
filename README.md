@@ -81,7 +81,7 @@ You can then inject it by using `_example` in you admin.base blade:
 ```php
 @_example
     @slot('header')
-        {{-- commonly used css --}}_
+        {{-- commonly used css --}}
         @yield('header') {{-- expose for subpages --}}
     @endslot
     
