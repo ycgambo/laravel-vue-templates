@@ -37,7 +37,16 @@ Install package:
 Release resource:
 
     php artisan vendor:publish --provider='Yb\LVT\ThemeServiceProvider'
+    
+Register the example routes, add this line into your providers in `config/app.php`:
 
+    Yb\LVT\ThemeServiceProvider::class,
+
+Access `hostname/lvt/VueAdmin/example/dashboard` to visit the pages.
+
+> Checkout this online [Demo](http://lvt.notee.cc/lvt/VueAdmin/example/dashboard) that I deployed on my server.
+
+> Also, there are a directory `resources/laravel-vue-templates` which copied out of this package that contains example references.
 
 ## Usage
 
@@ -123,9 +132,3 @@ And use injected blades:
     @endsection
 @endexample
 ```
-
-If you want to register the example routes, add this line into you providers `config/app.php` and then access `hostname/lvt/VueAdmin/example/dashboard` to visit the pages:
-
-        Yb\LVT\ThemeServiceProvider::class,
-
-Also, there are a directory `resources/laravel-vue-templates` which copied out of this package that contains example references.
