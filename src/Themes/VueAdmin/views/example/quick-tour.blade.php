@@ -32,7 +32,7 @@
                     <span>Form</span>
                 </div>
 
-                <fm-form action="/upload" method="post" size="small">
+                <fm-form action="/lvt/VueAdmin/example/upload" method="post" size="small">
                     @csrf
                     <el-form-item label="Name">
                         <fm-input name="name"></fm-input>
@@ -63,7 +63,7 @@
                                    inactive-text="No"></fm-switch>
                     </el-form-item>
                     <el-form-item label="Describe Yourself">
-                        <text-editor name="describe" upload_url="/example/img_upload">{!! <<<'DOC'
+                        <text-editor name="describe" upload_url="/lvt/VueAdmin/example/img_upload">{!! <<<'DOC'
             <p align="center">&nbsp;</p> <p align="center"><font size="4" face="arial black,sans-serif"><strong>I AM <em><font size="5" color="#FF0000" face="comic sans ms,sans-serif">HOT</font></em></strong></font></p> <p align="center">&nbsp;</p> <p align="center"><font size="4" face="arial black,sans-serif"><strong><em><font size="5" color="#FF0000" face="comic sans ms,sans-serif"><img src="/images/img.jpg" alt="" width="128" height="128" /></font></em></strong></font></p>
 DOC;
 ; !!}</text-editor>
@@ -89,7 +89,7 @@ DOC;
                     <span>Upload</span>
                 </div>
 
-                <el-upload name="file1" action="/file_upload" multiple drag
+                <el-upload name="file1" action="/lvt/VueAdmin/example/file_upload" multiple drag
                            :headers="{'X-CSRF-TOKEN': '{{csrf_token()}}'}">
                     <i class="el-icon-upload"></i>
                     <div class="el-upload__text">Drop file here or <em>click to upload</em></div>

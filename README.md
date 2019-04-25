@@ -124,3 +124,8 @@ And use injected blades:
 @endexample
 ```
 
+If you want to register the example routes, add this line into you providers `config/app.php` and then access `hostname/lvt/VueAdmin/example/dashboard` to visit the pages:
+
+        Yb\LVT\ThemeServiceProvider::class,
+
+Also, there are a directory `resources/laravel-vue-templates` which copied out of this package that contains example references.

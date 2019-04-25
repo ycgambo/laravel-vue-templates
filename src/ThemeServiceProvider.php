@@ -8,10 +8,11 @@
 namespace Yb\LVT;
 
 use Illuminate\Support\ServiceProvider;
-use LVT\Themes\VueAdmin\VueAdmin;
+use Yb\LVT\Themes\VueAdmin\VueAdmin;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Finder\Finder;
+use Illuminate\Support\Arr;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -100,7 +101,7 @@ class ThemeServiceProvider extends ServiceProvider
     {
         // get menus
         $blades = [];
-        foreach (array_keys(File::index($this->exampleBladePath(), '*.blade.php')) as $key) {
+        foreach (array_keys($this->index($this->exampleBladePath(), '*.blade.php')) as $key) {
             $key = basename($key, '.blade.php');
             $route = str_replace('.', '/', $key);
             $blades[$key] = "/lvt/VueAdmin/example/$route";
