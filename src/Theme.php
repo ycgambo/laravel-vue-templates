@@ -5,7 +5,7 @@
  * Time: 8:44 AM
  */
 
-namespace LVT;
+namespace Yb\LVT;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;

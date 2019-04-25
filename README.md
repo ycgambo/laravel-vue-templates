@@ -36,7 +36,7 @@ Install package:
    
 Release resource:
 
-    php artisan vendor:publish --provider='LVT\ThemeServiceProvider'
+    php artisan vendor:publish --provider='Yb\LVT\ThemeServiceProvider'
 
 
 ## Usage

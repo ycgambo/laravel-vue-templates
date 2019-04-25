@@ -5,9 +5,9 @@
  * Time: 8:52 AM
  */
 
-namespace LVT\Themes\VueAdmin;
+namespace Yb\LVT\Themes\VueAdmin;
 
-class VueAdmin extends \LVT\Theme
+class VueAdmin extends \Yb\LVT\Theme
 {
     const RESOURCE_DIR = '/laravel-vue-templates';
 

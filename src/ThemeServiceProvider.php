@@ -5,7 +5,7 @@
  * Time: 12:06 PM
  */
 
-namespace LVT;
+namespace Yb\LVT;
 
 use Illuminate\Support\ServiceProvider;
 use LVT\Themes\VueAdmin\VueAdmin;
@@ -45,7 +45,7 @@ class ThemeServiceProvider extends ServiceProvider
     protected function registerExampleRoutes()
     {
         Route::prefix('lvt/VueAdmin/example')
-//            ->namespace("{$this->namespace}")
+            ->namespace('Yb\LVT\VueAdmin')
             ->group(function ($router) {
                 $router->redirect('/', '/lvt/VueAdmin/example/dashboard');
                 $router->any('/submit', 'ExampleController@checkSubmit');
