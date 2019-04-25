@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1>Default</h1>
     <el-button onclick="__notify(123)">Click Me</el-button>
@@ -15,4 +15,4 @@
     <el-button onclick="__notify(123, 'title', 'success', 500)">Duration</el-button>
     <el-button onclick="__notify(123, 'title', 'success', 0)">No Auto Close</el-button>
 
-@endexample
+@endlvt_example

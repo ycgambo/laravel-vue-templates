@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
 <h1 class="mt-3">Nav</h1>
 <div>
@@ -61,4 +61,4 @@
     <li class="breadcrumb-item active"><span>Library</span></li>
 </b-breadcrumb>
 
-@endexample
+@endlvt_example

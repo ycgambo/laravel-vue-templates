@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1 class="mt-3">Light</h1>
     <code-php name="code">{!! <<<'DOC'
@@ -56,4 +56,4 @@ class TestController extends Controller
 DOC;
 ; !!}</code-php>
 
-@endexample
+@endlvt_example

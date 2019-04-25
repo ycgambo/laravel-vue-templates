@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <div>
         <h5>Small image with <code>fluid</code>:</h5>
@@ -22,4 +22,4 @@
     </b-container>
 
 
-@endexample
+@endlvt_example

@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <div class="col-md-8">
         <b-embed type="iframe"
@@ -8,4 +8,4 @@
         ></b-embed>
     </div>
 
-@endexample
+@endlvt_example

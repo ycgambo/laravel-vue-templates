@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1 class="mt-3">Light</h1>
     <code-json name="code">{!! <<<'DOC'
@@ -50,4 +50,4 @@ DOC;
 DOC;
 ; !!}</code-json>
 
-@endexample
+@endlvt_example

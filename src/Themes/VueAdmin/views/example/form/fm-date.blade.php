@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
 <h1 class="mt-3">Date</h1>
 <fm-date name="date" type="date"></fm-date>
@@ -54,4 +54,4 @@
     <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
 </fm-form>
 
-@endexample
+@endlvt_example

@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
 <h1 class="mt-3">Select Basics</h1>
 <fm-select name="select1">
@@ -97,4 +97,4 @@
     <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
 </fm-form>
 
-@endexample
+@endlvt_example

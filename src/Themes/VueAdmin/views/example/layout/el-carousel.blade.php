@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1 class="mt-3">Basic</h1>
     <el-carousel>
@@ -29,4 +29,4 @@
     </el-carousel>
 
 
-@endexample
+@endlvt_example

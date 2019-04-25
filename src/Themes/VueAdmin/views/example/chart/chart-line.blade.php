@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1 class="mt-3">Zigzag</h1>
     <chart-line width="100%" height="500px" smooth="false" title="Title" x-name="xAxis" y-name="yAxis">
@@ -51,4 +51,4 @@
     </chart-line>
 
 
-@endexample
+@endlvt_example

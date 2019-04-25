@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <b-list-group>
         <b-list-group-item href="#">This is a default list group item</b-list-group-item>
@@ -13,4 +13,4 @@
         <b-list-group-item href="#" variant="dark">This is a dark list group item</b-list-group-item>
     </b-list-group>
 
-@endexample
+@endlvt_example

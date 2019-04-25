@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <b-breadcrumb>
         <li class="breadcrumb-item"><a href="/" target="_self" class="">Home</a></li>
@@ -124,4 +124,4 @@ DOC;
     </el-row>
 
 
-@endexample
+@endlvt_example

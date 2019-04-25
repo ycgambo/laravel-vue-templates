@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <b-jumbotron>
         <template slot="header">
@@ -56,4 +56,4 @@
     </b-collapse>
 
 
-@endexample
+@endlvt_example

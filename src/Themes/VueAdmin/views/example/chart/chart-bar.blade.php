@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1 class="mt-3">Normal</h1>
     <chart-bar width="100%" height="500px"  title="Title" x-name="xAxis" y-name="yAxis">
@@ -18,4 +18,4 @@
         }
     </chart-bar>
 
-@endexample
+@endlvt_example

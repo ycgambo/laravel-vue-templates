@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1 class="mt-3">Basic</h1>
     <div class="mt-3">
@@ -71,4 +71,4 @@
         <el-button size="mini" round>Mini</el-button>
     </div>
 
-@endexample
+@endlvt_example

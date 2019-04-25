@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <div>
         <b-btn v-b-toggle.collapse1 variant="primary">Toggle Collapse</b-btn>
@@ -30,4 +30,4 @@
         </b-collapse>
     </div>
 
-@endexample
+@endlvt_example

@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
 
 <md-renderer>{!! <<<'DOC'
@@ -20,4 +20,4 @@ For more details, see `app/Listeners/RouteMatchedThenBootTheme.php`
 DOC;
 ; !!}</md-renderer>
 
-@endexample
+@endlvt_example

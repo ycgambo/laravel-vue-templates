@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <b-tabs>
         <b-tab title="first" active>
@@ -12,4 +12,4 @@
         </b-tab>
     </b-tabs>
 
-@endexample
+@endlvt_example

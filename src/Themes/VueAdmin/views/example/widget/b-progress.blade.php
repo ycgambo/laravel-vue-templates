@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <b-progress :value="25" variant="success" striped animated show-value class="mb-2"></b-progress>
     <b-progress :value="50" variant="info" striped class="mb-2"></b-progress>
@@ -10,4 +10,4 @@
         <b-progress-bar :value="20" variant="dark" class="mb-2"></b-progress-bar>
     </b-progress>
 
-@endexample
+@endlvt_example

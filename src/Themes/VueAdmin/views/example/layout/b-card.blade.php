@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <div>
         <b-card title="Card Title"
@@ -203,4 +203,4 @@
     </div>
 
 
-@endexample
+@endlvt_example

@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <div>
         <h2>Example heading <b-badge>New</b-badge></h2>
@@ -38,4 +38,4 @@
         <b-badge href="#" variant="dark">Dark</b-badge>
     </div>
 
-@endexample
+@endlvt_example

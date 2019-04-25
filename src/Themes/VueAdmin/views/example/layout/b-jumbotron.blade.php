@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <b-jumbotron>
         <template slot="header">
@@ -17,4 +17,4 @@
         <b-btn variant="success" href="#">Do Something Else</b-btn>
     </b-jumbotron>
 
-@endexample
+@endlvt_example

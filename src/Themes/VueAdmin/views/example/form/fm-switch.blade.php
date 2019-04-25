@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
 <h1 class="mt-3">Switch Basics</h1>
 <fm-switch name="switch"></fm-switch>
@@ -46,4 +46,4 @@
     ]
 </chart-table>
 
-@endexample
+@endlvt_example

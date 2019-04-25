@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <md-editor>{!! <<<'DOC'
 # hello, This is Markdown Live Preview
@@ -39,4 +39,4 @@ code (3 grave)
 DOC;
 ; !!}</md-editor>
 
-@endexample
+@endlvt_example

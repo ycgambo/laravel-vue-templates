@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1>Default</h1>
     <el-button onclick="__confirm(123)">Click Me</el-button>
@@ -12,4 +12,4 @@
     <el-button onclick="__confirm(123, 'info', function(){__notify('Passed')})">Pass</el-button>
     <el-button onclick="__confirm(123, 'info', function(){}, function(){__notify('Failed')})">Fail</el-button>
 
-@endexample
+@endlvt_example

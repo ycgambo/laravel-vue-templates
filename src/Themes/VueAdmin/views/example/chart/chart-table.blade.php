@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
 <h1 class="mt-3">Table</h1>
 <chart-table>
@@ -31,4 +31,4 @@
 </chart-table>
 
 
-@endexample
+@endlvt_example

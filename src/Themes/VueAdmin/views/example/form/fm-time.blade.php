@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
 <h1 class="mt-3">Time Basics</h1>
 <fm-time name="time"></fm-time>
@@ -46,4 +46,4 @@
     <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
 </fm-form>
 
-@endexample
+@endlvt_example

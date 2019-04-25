@@ -1,4 +1,4 @@
-@example
+@lvt_example
 
    <h1 class="mt-3">Default</h1>
     <code-base name="code">{!! <<<'DOC'
@@ -168,4 +168,4 @@ DOC;
 DOC;
 ; !!}</code-base>
 
-@endexample
+@endlvt_example
