@@ -24,9 +24,6 @@ It deals with these painful stuff:
 3. vue plugins (write vue tags in blade)
 
 
-## Demo
-
-
 
 ## Install
 
