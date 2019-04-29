@@ -9,7 +9,6 @@
 
     <title>{{ isset($title) ? $title: '' }}</title>
 
-    <link href="{{ $__theme->mix('/css/loading.css') }}" rel="stylesheet">
     <link href="{{ $__theme->mix('/css/app.css') }}" rel="stylesheet">
     {{ isset($header) ? $header: '' }}
 </head>
@@ -17,20 +16,7 @@
 <body>
 
 <div id="loading">
-    <div id="loading-center">
-        <div id="loading-center-absolute">
-            <div class="object"></div>
-            <div class="object"></div>
-            <div class="object"></div>
-            <div class="object"></div>
-            <div class="object"></div>
-            <div class="object"></div>
-            <div class="object"></div>
-            <div class="object"></div>
-            <div class="object"></div>
-        </div>
-        <div id="loading-footer">Loading...</div>
-    </div>
+    <div class="lds-dual-ring"></div>
 </div>
 <script>
     (async function f() {
