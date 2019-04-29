@@ -9,14 +9,24 @@
 
     <title>{{ isset($title) ? $title: '' }}</title>
 
-    <link href="{{ $__theme->mix('/css/pace.css') }}" rel="stylesheet">
-    <script src="{{ $__theme->mix('/js/pace.js') }}"></script>
-
     <link href="{{ $__theme->mix('/css/app.css') }}" rel="stylesheet">
     {{ isset($header) ? $header: '' }}
 </head>
 
 <body>
+
+<div id="loading">
+    <div class="lds-dual-ring"></div>
+</div>
+<script>
+    (async function f() {
+        document.getElementById('loading').style.display = 'none';
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        if (window.Vue === undefined) {
+            document.getElementById('loading').style.display = 'block';
+        }
+    })();
+</script>
 
 <div id="app">
     <layout-sidebar>
