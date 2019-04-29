@@ -5,10 +5,10 @@
             Welcome, man
         </template>
         <template slot="lead">
-            Vue components in <code>ONE</code> tag. Easy to design UI in Laravel blade template.
+            A Laravel admin template to use Vue tags in blades
         </template>
         <hr>
-        <p> Just pick a tag and put data in it, we'll handle the render stuff. </p>
+        <p> Just pick a tag and put data in, we'll handle the render stuff. </p>
         <b-btn variant="outline-primary"
                href="https://github.com/ycgambo/laravel-vue-templates/blob/master/resources/views/example/dashboard.blade.php">
             Page Source
