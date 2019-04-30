@@ -1,7 +1,7 @@
 @lvt_example
 
 <h1 class="mt-3">Light</h1>
-<code-html name="code">@php echo e( <<<'DOC'
+<code-html v-pre>@php echo e( <<<'DOC'
 <html style="color: green">
   <!-- this is a comment -->
   <head>
@@ -28,7 +28,7 @@ DOC
 )@endphp</code-html>
 
 <h1 class="mt-3">Dark</h1>
-<code-html name="code" dark>@php echo e( <<<'DOC'
+<code-html dark v-pre>@php echo e( <<<'DOC'
 <html style="color: green">
   <!-- this is a comment -->
   <head>

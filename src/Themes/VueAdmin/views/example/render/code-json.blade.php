@@ -1,7 +1,7 @@
 @lvt_example
 
    <h1 class="mt-3">Light</h1>
-    <code-json name="code">{!! <<<'DOC'
+    <code-json v-pre>{!! <<<'DOC'
 [
  {
   _id: "post 1",
@@ -26,7 +26,7 @@ DOC;
 ; !!}</code-json>
 
     <h1 class="mt-3">Dark</h1>
-    <code-json name="code" dark>{!! <<<'DOC'
+    <code-json dark v-pre>{!! <<<'DOC'
 [
  {
   _id: "post 1",
