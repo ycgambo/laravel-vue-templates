@@ -1,6 +1,6 @@
 @lvt_example
 
-<h1 class="mt-3">Basic <b-badge variant="primary" v-b-toggle.default>Source Code</b-badge></h1>
+<h1 class="mt-3">Basic</h1>
 <div class="mt-3">
     <el-button>Default</el-button>
     <el-button type="primary">Primary</el-button>
@@ -38,6 +38,7 @@
     <el-button circle><i class="fa fa-spinner fa-pulse"></i></el-button>
 </div>
 
+<b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
 <b-collapse id="default" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <el-button>Default</el-button>
     <el-button type="primary">Primary</el-button>
@@ -74,7 +75,7 @@ DOC
 )@endphp</code-html></b-collapse>
 
 
-<h1 class="mt-3">Disabled <b-badge variant="primary" v-b-toggle.disabled>Source Code</b-badge></h1>
+<h1 class="mt-3">Disabled</h1>
 <div class="mt-3">
     <el-button disabled>Default</el-button>
     <el-button type="primary" disabled>Primary</el-button>
@@ -112,6 +113,7 @@ DOC
     <el-button circle disabled><i class="fa fa-spinner fa-pulse"></i></el-button>
 </div>
 
+<b-badge class="mt-3" v-b-toggle.disabled>Source Code</b-badge>
 <b-collapse id="disabled" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <el-button disabled>Default</el-button>
     <el-button type="primary" disabled>Primary</el-button>
@@ -148,7 +150,7 @@ DOC
 )@endphp</code-html></b-collapse>
 
 
-<h1 class="mt-3">Size <b-badge variant="primary" v-b-toggle.size>Source Code</b-badge></h1>
+<h1 class="mt-3">Size</h1>
 <div class="mt-3">
     <el-button type="success">Default</el-button>
     <el-button type="success" size="medium">Medium</el-button>
@@ -174,6 +176,7 @@ DOC
     <el-button type="success" icon="el-icon-check" circle size="mini"></el-button>
 </div>
 
+<b-badge class="mt-3" v-b-toggle.size>Source Code</b-badge>
 <b-collapse id="size" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <el-button type="success">Default</el-button>
     <el-button type="success" size="medium">Medium</el-button>
