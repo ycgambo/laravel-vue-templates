@@ -13,13 +13,13 @@
 <fm-date name="datetimerange" type="datetimerange" placeholder="start,end"></fm-date>
 
 <h1 class="mt-3">Default Value</h1>
-<fm-date name="datetime2" type="datetime" value="{{time() * 1000}}}"></fm-date>
-<fm-date name="daterange2" type="daterange" value="{{strtotime('-1 day') * 1000}},{{strtotime('+1 day') * 1000}}"></fm-date>
+<fm-date name="datetime2" type="datetime" value="{{time()}}}"></fm-date>
+<fm-date name="daterange2" type="daterange" value="{{strtotime('-1 day')}},{{strtotime('+1 day')}}"></fm-date>
 
 <h1 class="mt-3">Range Limit</h1>
-<fm-date name="date7" type="date" range=",{{time() * 1000}}}"></fm-date>
-<fm-date name="date8" type="date" range="{{time() * 1000}},}"></fm-date>
-<fm-date name="date8" type="date" range="{{strtotime('-1 day') * 1000}},{{strtotime('+1 day') * 1000}}"></fm-date>
+<fm-date name="date7" type="date" range=",{{time()}}}"></fm-date>
+<fm-date name="date8" type="date" range="{{time()}},}"></fm-date>
+<fm-date name="date8" type="date" range="{{strtotime('-1 day')}},{{strtotime('+1 day')}}"></fm-date>
 
 <h1 class="mt-3">Disabled</h1>
 <fm-date name="date2" type="date" disabled></fm-date>
@@ -47,7 +47,7 @@
 </chart-table>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/example/submit">
+<fm-form method="post" action="/lvt/VueAdmin/example//submit">
     @csrf
     <fm-date name="date" type="date"></fm-date>
     <fm-date name="daterange" type="daterange" placeholder="start,end"></fm-date>

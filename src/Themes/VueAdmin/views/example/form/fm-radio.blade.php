@@ -70,7 +70,7 @@
 </chart-table>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/example/submit">
+<fm-form method="post" action="/lvt/VueAdmin/example//submit">
     @csrf
     <fm-radio value="Chicago">
         <el-radio-button name="city" label="New York"></el-radio-button>

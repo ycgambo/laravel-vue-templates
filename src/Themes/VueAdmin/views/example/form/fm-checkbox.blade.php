@@ -71,7 +71,7 @@
 </chart-table>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/example/submit">
+<fm-form method="post" action="/lvt/VueAdmin/example//submit">
     @csrf
     <fm-checkbox value="Chicago,New York">
         <el-checkbox name="new_york" label="New York"></el-checkbox>

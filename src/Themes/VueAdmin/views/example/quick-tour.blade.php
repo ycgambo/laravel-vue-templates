@@ -34,34 +34,22 @@
 
                 <fm-form action="/lvt/VueAdmin/example/upload" method="post" size="small">
                     @csrf
-                    <el-form-item label="Name">
-                        <fm-input name="name"></fm-input>
-                    </el-form-item>
-                    <el-form-item label="Gender">
-                        <fm-radio checked="0">
-                            <el-radio name="gender" label="0" border>Male</el-radio>
-                            <el-radio name="gender" label="1" border>Female</el-radio>
-                        </fm-radio>
-                    </el-form-item>
-                    <el-form-item label="Birth">
-                        <fm-date name="birth" type="datetime"></fm-date>
-                    </el-form-item>
-                    <el-form-item label="Hometown">
-                        <fm-select name="hometown">
-                            <el-option value="Washington" label="Washington">Washington</el-option>
-                            <el-option value="Chicago" label="Chicago">Chicago</el-option>
-                        </fm-select>
-                    </el-form-item>
-                    <el-form-item label="Hobbies">
-                        <fm-checkbox>
-                            <el-checkbox name="code" label="Code" border checked>Code</el-checkbox>
-                            <el-checkbox name="eat" label="Eat" border>Eat</el-checkbox>
-                        </fm-checkbox>
-                    </el-form-item>
-                    <el-form-item label="Remember Me">
-                        <fm-switch name="remember" on active-color="#13ce66" inactive-color="#ff4949" active-text="Yes"
-                                   inactive-text="No"></fm-switch>
-                    </el-form-item>
+                    <fm-input label="Name" name="name"></fm-input>
+                    <fm-radio label="Gender" checked="0">
+                        <el-radio name="gender" label="0" border>Male</el-radio>
+                        <el-radio name="gender" label="1" border>Female</el-radio>
+                    </fm-radio>
+                    <fm-date label="Birth" name="birth" type="datetime"></fm-date>
+                    <fm-select label="Hometown" name="hometown">
+                        <el-option value="Washington" label="Washington">Washington</el-option>
+                        <el-option value="Chicago" label="Chicago">Chicago</el-option>
+                    </fm-select>
+                    <fm-checkbox label="Hobbies">
+                        <el-checkbox name="code" label="Code" border checked>Code</el-checkbox>
+                        <el-checkbox name="eat" label="Eat" border>Eat</el-checkbox>
+                    </fm-checkbox>
+                    <fm-switch label="Remember Me" name="remember" on active-color="#13ce66" inactive-color="#ff4949" active-text="Yes"
+                               inactive-text="No"></fm-switch>
                     <el-form-item label="Describe Yourself">
                         <text-editor name="describe" upload_url="/lvt/VueAdmin/example/img_upload">{!! <<<'DOC'
             <p align="center">&nbsp;</p> <p align="center"><font size="4" face="arial black,sans-serif"><strong>I AM <em><font size="5" color="#FF0000" face="comic sans ms,sans-serif">HOT</font></em></strong></font></p> <p align="center">&nbsp;</p> <p align="center"><font size="4" face="arial black,sans-serif"><strong><em><font size="5" color="#FF0000" face="comic sans ms,sans-serif"><img src="/images/img.jpg" alt="" width="128" height="128" /></font></em></strong></font></p>

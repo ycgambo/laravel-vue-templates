@@ -10,8 +10,8 @@
 <fm-time name="time" range="09:30:00 - 12:00:00, 14:30:00 - 18:30:00"></fm-time>
 
 <h1 class="mt-3">Default Value</h1>
-<fm-time name="time" value="{{time() * 1000}}"></fm-time>
-<fm-time name="time" is-range value="{{strtotime('-1 hour') * 1000}},{{strtotime('+1 hour') * 1000}}"></fm-time>
+<fm-time name="time" value="{{time()}}"></fm-time>
+<fm-time name="time" is-range value="{{strtotime('-1 hour')}},{{strtotime('+1 hour')}}"></fm-time>
 
 <h1 class="mt-3">Disabled</h1>
 <fm-time name="time" disabled placeholder="disabled"></fm-time>
@@ -39,7 +39,7 @@
 </chart-table>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/example/submit">
+<fm-form method="post" action="/lvt/VueAdmin/example//submit">
     @csrf
     <fm-time name="time"></fm-time>
     <fm-time name="time2" is-range placeholder="start, end"></fm-time>
