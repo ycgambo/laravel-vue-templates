@@ -8,6 +8,11 @@
 return [
     'dashboard',
     'quick-tour',
+    'basic.url',
+    'basic.store',
+    'basic.notify',
+    'basic.confirm',
+    'basic.paginate',
     'basic.el-button',
     'basic.b-image',
     'basic.b-list',
