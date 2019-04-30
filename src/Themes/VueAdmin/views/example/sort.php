@@ -8,6 +8,7 @@
 return [
     'dashboard',
     'quick-tour',
+    'basic.load',
     'basic.url',
     'basic.store',
     'basic.notify',
