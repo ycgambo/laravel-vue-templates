@@ -143,7 +143,9 @@ class ThemeServiceProvider extends ServiceProvider
         ];
         $menus = [];
         foreach ($sort as $ordered_key) {
-            Arr::set($menus, $ordered_key, false);
+            if (Arr:has($blades, $ordered_key)) {
+                Arr::set($menus, $ordered_key, false);
+            }
         }
         foreach ($blades as $unordered_key => $route) {
             Arr::set($menus, $unordered_key, $route);
