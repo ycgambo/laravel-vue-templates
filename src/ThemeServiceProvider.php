@@ -143,17 +143,16 @@ class ThemeServiceProvider extends ServiceProvider
         ];
         $menus = [];
         foreach ($sort as $ordered_key) {
-            Arr::set($menus, $ordered_key, null);
+            Arr::set($menus, $ordered_key, false);
         }
         foreach ($blades as $unordered_key => $route) {
             Arr::set($menus, $unordered_key, $route);
         }
 
-        $menus = array_filter($menus);
         return $this->formatExampleMenus($menus);
     }
 
-    protected function formatExampleMenus(&$menus)
+    protected function formatExampleMenus($menus)
     {
         $icons = [
             'dashboard' => ':fa-tachometer',
