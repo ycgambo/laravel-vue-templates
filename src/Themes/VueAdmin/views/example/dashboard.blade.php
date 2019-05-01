@@ -10,7 +10,7 @@
         <hr>
         <p> Just pick a tag and put data in, we'll handle the render stuff. </p>
         <b-btn variant="outline-primary"
-               href="https://github.com/ycgambo/laravel-vue-templates/blob/master/resources/views/example/dashboard.blade.php">
+               href="https://github.com/ycgambo/laravel-vue-templates/blob/master/src/Themes/VueAdmin/views/example/dashboard.blade.php">
             Page Source
         </b-btn>
         <b-btn variant="outline-primary" href="https://github.com/ycgambo/laravel-vue-templates/issues">New Issue
@@ -20,7 +20,7 @@
     <el-row class="mt-3 text-center">
         <b-btn v-b-toggle.collapse1 variant="primary" size="lg">What's Included</b-btn>
 
-        <b-btn variant="success" size="lg" class="ml-4" href="/example/quick-tour">Quick Tour</b-btn>
+        <b-btn variant="success" size="lg" class="ml-4" href="/lvt/VueAdmin/example/quick-tour">Quick Tour</b-btn>
     </el-row>
 
     <b-collapse id="collapse1" class="mt-4">
