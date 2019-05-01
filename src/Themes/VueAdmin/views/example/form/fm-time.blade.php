@@ -39,7 +39,7 @@
 </chart-table>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/lvt/VueAdmin/example//submit">
+<fm-form method="post" action="/lvt/VueAdmin/example/submit">
     @csrf
     <fm-time name="time"></fm-time>
     <fm-time name="time2" is-range placeholder="start, end"></fm-time>

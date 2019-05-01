@@ -87,7 +87,7 @@
 </chart-table>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/lvt/VueAdmin/example//submit">
+<fm-form method="post" action="/lvt/VueAdmin/example/submit">
     @csrf
     <fm-select name="select3" multiple multiple-limit="3">
         <el-option value="value" label="label"></el-option>

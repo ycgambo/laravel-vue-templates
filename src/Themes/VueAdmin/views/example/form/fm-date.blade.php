@@ -47,7 +47,7 @@
 </chart-table>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/lvt/VueAdmin/example//submit">
+<fm-form method="post" action="/lvt/VueAdmin/example/submit">
     @csrf
     <fm-date name="date" type="date"></fm-date>
     <fm-date name="daterange" type="daterange" placeholder="start,end"></fm-date>

@@ -79,7 +79,7 @@
 <p>Mixed input</p>
 
 <h1 class="mt-3">Check Submits</h1>
-<fm-form method="post" action="/lvt/VueAdmin/example//submit">
+<fm-form method="post" action="/lvt/VueAdmin/example/submit">
     @csrf
     <fm-input name="bb" placeholder="new placeholder"></fm-input>
     <fm-number name="ll"></fm-number>
