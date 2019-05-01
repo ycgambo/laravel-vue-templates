@@ -143,12 +143,13 @@ class ThemeServiceProvider extends ServiceProvider
         ];
         $menus = [];
         foreach ($sort as $ordered_key) {
-            Arr::set($menus, $ordered_key, false);
+            Arr::set($menus, $ordered_key, null);
         }
         foreach ($blades as $unordered_key => $route) {
             Arr::set($menus, $unordered_key, $route);
         }
 
+        $menus = array_filter($menus);
         return $this->formatExampleMenus($menus);
     }
 
