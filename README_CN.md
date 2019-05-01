@@ -1,58 +1,54 @@
 
 # Laravel Vue Templates
 
-A Laravel admin template to generate dynamic Vue tags in blades. Focus on data, not render.
+可以使用Blade动态生成Vue标签的Laravel后台骨架，使后端开发者可以专注于数据、而不是页面渲染。
 
-[中文文档](https://github.com/ycgambo/laravel-vue-templates/blob/master/README_CN.md)
+## 痛点
 
-## Why
+虽然Laravel的Blade和Vue都是非常好用的，但是我们却不能把两者同时用起来（除非把Vue当成一个js库来使用）
 
-Though Laravel Blade and Vue are handy, we can not use them both(unless we use Vue as a library).
+一般来说，这就给后端开发在开发后台时留下了两个选择：
 
-This leaves us two options to develop a admin site:
+1. 用Laravel做api然后部署另一个Vue项目来做后台展示
+2. 用Laravel的模板引擎，使用jQuery来替代Vue来做动态交互
 
-1. use laravel as an api server and deploy another vue application
-2. use laravel blade engine with jquery and get ride of vue
+对于全栈开发者或者大的项目来说，选项1无疑是最好的选择。
+而选项2对于某些复杂的管理页来说开发起来就无比痛苦了。
 
-Option 1 is the best choice if you are a full stack developer or the project itself is scaled.
-Option 2 is very painful for those complex admin pages.
+在Vue Admin项目的基础上，我对其进行了一定的封装，来使其符合后端开发者的习惯。
 
-So, thanks to the vue-admin project, I warped it so to fit backend developer's habits.
+这个项目解决了以下痛点：
+1. 菜单 (生成菜单树，检测当前菜单)
+2. 异步页面加载 (异步渲染blade模板，却没有页面跳转)
+3. Vue标签支持 (在模板里动态生成并渲染Vue标签)
 
-It deals with these painful stuff:
-1. menus (generate menu tree, detect current menu)
-2. async page loading(load new blade into page content with no redirect)
-3. vue plugins (write vue tags in blade)
+## 安装
 
-
-
-## Install
-
-Install package:
+安装软件包:
 
     composer require ycgambo/laravel-vue-templates
    
-Release resource:
+释放资源:
 
     php artisan vendor:publish --provider='Yb\LVT\ThemeServiceProvider'
     
-Register the example routes, add this line into your providers in `config/app.php`:
+把下面这行代码加到`config/app.php`，如果你想注册例子的路由的话:
 
     Yb\LVT\ThemeServiceProvider::class,
 
-Access `hostname/lvt/VueAdmin/example/dashboard` to visit the pages.
+然后访问`hostname/lvt/VueAdmin/example/dashboard`来查看样例.
 
-> Checkout this online [Demo](http://lvt.notee.cc/lvt/VueAdmin/example/dashboard) that I deployed on my server.
+> 查看我部署的一个在线[Demo](http://lvt.notee.cc/lvt/VueAdmin/example/dashboard).
 
-> Also, there are a directory `resources/laravel-vue-templates` which copied out of this package that contains example references.
+> 同时，样例代码也被拷贝到了`resources/laravel-vue-templates`中以供参考.
 
-## Usage
+## 使用
 
-Register into Blade component:
+注册Blade组件:
 
     VueAdmin::create($namespace, 'example')->with('menus', $menus)->boot();
 
-And use in blades:
+然后使用即可:
 
 ```php
 @example
@@ -66,7 +62,7 @@ And use in blades:
 @endexample
 ```
 
-The `menus` is an array like: 
+`menus`应该遵循这样的结构: 
 
 ```php
 $menus = [
@@ -79,11 +75,11 @@ $menus = [
 ];
 ```
 
-If you want to extend the layout:
+如果你想继续扩展这个模板:
 
     VueAdmin::create($namespace, 'example')->inject('admin.base')->with('menus', $menus)->boot();
 
-You can then inject it by using `_example` in you admin.base blade:
+通过注入模板到`admin.base`中并用`_example`来拓展它:
 
 ```php
 @_example
@@ -105,7 +101,7 @@ You can then inject it by using `_example` in you admin.base blade:
 @end_example
 ```
 
-And use injected blades:
+然后就可以使用扩展后的自定义模板了:
 
 ```php
 @example
