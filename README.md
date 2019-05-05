@@ -66,7 +66,7 @@ And use in blades:
 @endexample
 ```
 
-The `menus` is an array like: 
+The `menus` is an array like this: 
 
 ```php
 $menus = [

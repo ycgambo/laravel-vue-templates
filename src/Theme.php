@@ -7,8 +7,9 @@
 
 namespace Yb\LVT;
 
-use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\AbstractPaginator;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 
 abstract class Theme
@@ -43,6 +44,17 @@ abstract class Theme
         return $this;
     }
 
+    /**
+     * replace the default pagination links render template
+     * @return $this
+     */
+    public function paginate()
+    {
+        AbstractPaginator::defaultSimpleView("$this->namespace::links.default");
+        AbstractPaginator::defaultView("$this->namespace::links.default");
+        return $this;
+    }
+
     public function boot()
     {
         $viewName = "$this->namespace::layouts.$this->from.main";
@@ -58,13 +70,13 @@ abstract class Theme
 
         // 加载当前view的时候再创建绑定，防止同一个主题使用多次时变量被覆盖
         View::creator($viewName, function ($view) {
-            Paginator::$defaultSimpleView = "$this->namespace::links.default";
-
             $view->with('__theme', $this);
             foreach ($this->with as $key => $value) {
                 $view->with($key, $value);
             }
         });
+
+        return $this;
     }
 
     public function viewPath()

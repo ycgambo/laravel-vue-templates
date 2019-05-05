@@ -94,6 +94,7 @@ class ThemeServiceProvider extends ServiceProvider
         VueAdmin::create('lvt', 'lvt_example')
             ->inject('lvt::base')
             ->with('menus', $this->getExampleMenus())
+            ->paginate()
             ->boot();
     }
 
