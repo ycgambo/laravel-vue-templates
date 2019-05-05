@@ -9,7 +9,9 @@
 <md-renderer v-pre v-pre>{!! <<<'DOC'
 A paginate method is provided to replace the default laravel bootstrap 4 pagination link style.
 
+```php
     VueAdmin::create($namespace, 'example')->with('menus', $menus)->paginate()->boot();
+```
 
 If you want to use the default bootstrap 4 pagination style simultaneously, use `links('pagination::bootstrap-4')`.
 DOC;
