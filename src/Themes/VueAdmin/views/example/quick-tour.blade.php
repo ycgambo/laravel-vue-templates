@@ -32,7 +32,7 @@
                     <span>Form</span>
                 </div>
 
-                <fm-form action="/lvt/VueAdmin/example/upload" method="post" size="small">
+                <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small">
                     @csrf
                     <fm-input label="Name" name="name"></fm-input>
                     <fm-radio label="Gender" checked="0">
@@ -77,7 +77,7 @@ DOC;
                     <span>Upload</span>
                 </div>
 
-                <el-upload name="file1" action="/lvt/VueAdmin/example/file_upload" multiple drag
+                <el-upload name="file1" action="/lvt/VueAdmin/example/upload" multiple drag
                            :headers="{'X-CSRF-TOKEN': '{{csrf_token()}}'}">
                     <i class="el-icon-upload"></i>
                     <div class="el-upload__text">Drop file here or <em>click to upload</em></div>

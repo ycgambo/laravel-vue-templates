@@ -92,9 +92,7 @@ You can then inject it by using `_example` in you admin.base blade:
         @yield('header') {{-- expose for subpages --}}
     @endslot
     
-    @slot('title')
-        {{ $title }} {{-- expose title for subpages --}}
-    @endslot
+    @yield('title') {{-- expose title for subpages --}}
     
     {{ $slot }}
     
@@ -113,9 +111,9 @@ And use injected blades:
         {{-- page css, SEO stuff --}}
     @endsection
 
-    @slot('title')
+    @section('title')
         Page No 1
-    @endslot
+    @endsection
     
     <chart-bar width="100%" height="500px"  title="Title" x-name="xAxis" y-name="yAxis">
         {
