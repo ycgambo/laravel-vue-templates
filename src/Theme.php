@@ -58,7 +58,7 @@ abstract class Theme
 
         // 加载当前view的时候再创建绑定，防止同一个主题使用多次时变量被覆盖
         View::creator($viewName, function ($view) {
-            Paginator::$defaultView = "$this->namespace::links.default";
+            Paginator::$defaultSimpleView = "$this->namespace::links.default";
 
             $view->with('__theme', $this);
             foreach ($this->with as $key => $value) {
