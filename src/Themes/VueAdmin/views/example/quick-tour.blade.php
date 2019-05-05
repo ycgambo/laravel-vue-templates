@@ -1,8 +1,7 @@
 @lvt_example
 
    <b-breadcrumb>
-        <li class="breadcrumb-item"><a href="/" target="_self" class="">Home</a></li>
-        <li class="breadcrumb-item"><a href="/example" target="_self" class="">Example</a></li>
+        <li class="breadcrumb-item"><a href="/lvt/VueAdmin/example/dashboard" target="_self" class="">Home</a></li>
         <li class="breadcrumb-item active"><span>Quick Tour</span></li>
     </b-breadcrumb>
 
