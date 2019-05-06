@@ -6,7 +6,7 @@
     $users = new \Illuminate\Pagination\LengthAwarePaginator(array_fill(0, 50, 1), 50, 5, $page,['path' => $path]);
 @endphp
 
-<md-renderer v-pre v-pre>{!! <<<'DOC'
+<md-renderer v-pre>{!! <<<'DOC'
 A paginate method is provided to replace the default laravel bootstrap 4 pagination link style.
 
 ```php

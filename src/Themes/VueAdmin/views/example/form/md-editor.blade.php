@@ -5,11 +5,13 @@
     <md-editor></md-editor>
 </div>
 
-<b-badge variant="primary" v-b-toggle.default>Source Code</b-badge>
-<b-collapse id="default" class="mt-2"><code-html>@php echo e( <<<'DOC'
+<b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
+<b-collapse id="default" class="mt-2">
+    <code-html>@php echo e( <<<'DOC'
     <md-editor></md-editor>
 DOC
-)@endphp</code-html></b-collapse>
+)@endphp</code-html>
+</b-collapse>
 
 
 <h1 class="mt-3">Height</h1>
@@ -17,11 +19,13 @@ DOC
     <md-editor height="100px"></md-editor>
 </div>
 
-<b-badge variant="primary" v-b-toggle.height>Source Code</b-badge>
-<b-collapse id="height" class="mt-2"><code-html>@php echo e( <<<'DOC'
+<b-badge class="mt-3" v-b-toggle.height>Source Code</b-badge>
+<b-collapse id="height" class="mt-2">
+    <code-html>@php echo e( <<<'DOC'
     <md-editor height="100px"></md-editor>
 DOC
-)@endphp</code-html></b-collapse>
+)@endphp</code-html>
+</b-collapse>
 
 
 <h1 class="mt-3">Contents</h1>
@@ -66,8 +70,9 @@ MDDOC;
 ; !!}</md-editor>
 </div>
 
-<b-badge variant="primary" v-b-toggle.contents>Source Code</b-badge>
-<b-collapse id="contents" class="mt-2"><code-html>@php echo e( <<<'DOC'
+<b-badge class="mt-3" v-b-toggle.contents>Source Code</b-badge>
+<b-collapse id="contents" class="mt-2">
+    <code-html>@php echo e( <<<'DOC'
     <md-editor>{!! <<<'MDDOC'
 # hello, This is Markdown Live Preview
 
@@ -107,7 +112,8 @@ code (3 grave)
 MDDOC;
 ; !!}</md-editor>
 DOC
-)@endphp</code-html></b-collapse>
+)@endphp</code-html>
+</b-collapse>
 
 
 <h1 class="mt-3">AutoSave</h1>
@@ -116,11 +122,13 @@ DOC
     <md-editor autosave="md2"></md-editor>
 </div>
 
-<b-badge variant="primary" v-b-toggle.autosave>Source Code</b-badge>
-<b-collapse id="autosave" class="mt-2"><code-html>@php echo e( <<<'DOC'
+<b-badge class="mt-3" v-b-toggle.autosave>Source Code</b-badge>
+<b-collapse id="autosave" class="mt-2">
+    <code-html>@php echo e( <<<'DOC'
     <md-editor autosave="md2"></md-editor>
 DOC
-)@endphp</code-html></b-collapse>
+)@endphp</code-html>
+</b-collapse>
 
 
 <h1 class="mt-3">Check Submits</h1>
