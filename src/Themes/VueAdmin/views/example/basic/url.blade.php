@@ -5,7 +5,7 @@
 </div>
 
 
-<code-base>{!! <<<'DOC'
+<code-base v-pre>{!! <<<'DOC'
     __url.resolve('http://example.com/', '/one')    // 'http://example.com/one'
     __url.resolve('http://example.com/one', '/two') // 'http://example.com/two'
     __url.resolve('/one/two/three', 'four')         // '/one/two/four'

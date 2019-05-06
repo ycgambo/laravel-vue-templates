@@ -4,7 +4,7 @@
     A Javascript <a href="https://www.npmjs.com/package/store">Store</a> helper library is registered.
 </div>
 
-<code-base>{!! <<<'DOC'
+<code-base v-pre>{!! <<<'DOC'
 // Store current user
 __store.set('user', { name:'Marcus' })
 

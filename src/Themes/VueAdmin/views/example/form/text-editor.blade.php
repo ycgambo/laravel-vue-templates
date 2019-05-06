@@ -5,7 +5,7 @@
     <text-editor upload_url="/lvt/VueAdmin/example/img_upload"></text-editor>
 </div>
 
-<b-badge variant="primary" v-b-toggle.default>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
 <b-collapse id="default" class="mt-2">
     <code-html>@php echo e( <<<'TXTDOC'
     <text-editor autosave="text" upload_url="/lvt/VueAdmin/example/img_upload"></text-editor>
@@ -19,11 +19,13 @@ TXTDOC
     <text-editor min_height="300px" max_height="400px"></text-editor>
 </div>
 
-<b-badge variant="primary" v-b-toggle.height>Source Code</b-badge>
-<b-collapse id="height" class="mt-2"><code-html>@php echo e( <<<'DOC'
+<b-badge class="mt-3" v-b-toggle.height>Source Code</b-badge>
+<b-collapse id="height" class="mt-2">
+    <code-html>@php echo e( <<<'DOC'
     <text-editor min_height="300px" max_height="400px"></text-editor>
 DOC
-)@endphp</code-html></b-collapse>
+)@endphp</code-html>
+</b-collapse>
 
 
 <h1 class="mt-3">AutoSave</h1>
@@ -36,7 +38,7 @@ DOC;
 ; !!}</text-editor>
 </div>
 
-<b-badge variant="primary" v-b-toggle.autosave>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.autosave>Source Code</b-badge>
 <b-collapse id="autosave" class="mt-2">
     <code-html>@php echo e( <<<'TXTDOC'
     <text-editor upload_url="/lvt/VueAdmin/example/img_upload">{!! <<<'DOC'
