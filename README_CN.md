@@ -62,7 +62,7 @@
 @endexample
 ```
 
-`menus`应该遵循这样的结构: 
+`menus`应该遵循这样的结构，[查看如何构造菜单](https://github.com/ycgambo/laravel-vue-templates/blob/master/src/Menu.php): 
 
 ```php
 $menus = [

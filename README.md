@@ -66,7 +66,7 @@ And use in blades:
 @endexample
 ```
 
-The `menus` is an array like this: 
+The `menus` is an array like this, [see how to generate it](https://github.com/ycgambo/laravel-vue-templates/blob/master/src/Menu.php):
 
 ```php
 $menus = [
