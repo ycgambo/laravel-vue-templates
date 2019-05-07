@@ -53,40 +53,12 @@ class ThemeServiceProvider extends ServiceProvider
                 $router->post('/upload', 'ExampleController@fileUpload');
                 $router->post('/img_upload', 'ExampleController@imgUpload');
 
-                foreach (array_keys($this->index($this->exampleBladePath(), '*.blade.php')) as $key) {
+                foreach (array_keys(File::index($this->exampleBladePath(), '*.blade.php')) as $key) {
                     $key = basename($key, '.blade.php');
                     $route = str_replace('.', '/', $key);
                     $router->view($route, "lvt::example.$key");
                 }
             });
-    }
-
-    protected function index($path, $name = '*', $sort = SORT_NATURAL)
-    {
-        $files = [];
-
-        foreach (Finder::create()->files()->name($name)->in($path) as $file) {
-            $directory = $this->getNestedDirectory($file, $path);
-
-            $files[$directory.basename($file->getRealPath())] = $file->getRealPath();
-        }
-
-        if ($sort) {
-            ksort($files, $sort);
-        }
-
-        return $files;
-    }
-
-    public function getNestedDirectory(\SplFileInfo $file, $path)
-    {
-        $directory = $file->getPath();
-
-        if ($nested = trim(str_replace($path, '', $directory), DIRECTORY_SEPARATOR)) {
-            $nested = str_replace(DIRECTORY_SEPARATOR, '.', $nested).'.';
-        }
-
-        return $nested;
     }
 
     protected function registerExampleViews()
@@ -100,14 +72,6 @@ class ThemeServiceProvider extends ServiceProvider
 
     protected function getExampleMenus()
     {
-        // get menus
-        $blades = [];
-        foreach (array_keys($this->index($this->exampleBladePath(), '*.blade.php')) as $key) {
-            $key = basename($key, '.blade.php');
-            $route = str_replace('.', '/', $key);
-            $blades[$key] = "/lvt/VueAdmin/example/$route";
-        }
-
         $sort = [
             'dashboard',
             'quick-tour',
@@ -134,61 +98,29 @@ class ThemeServiceProvider extends ServiceProvider
             'form.fm-checkbox',
             'form.fm-radio',
             'form.fm-switch',
-            'form.fm-text-editor',
-            'form.fm-md-editor',
-            'form.fm-el-upload',
+            'form.el-upload',
+            'editor.text-editor',
+            'editor.markdown.md-editor',
             'chart.chart-table',
-            'render.code-base',
             'media.b-embed',
-            'theme.readme',
         ];
-        $menus = [];
-        foreach ($sort as $ordered_key) {
-            if (Arr::has($blades, $ordered_key)) {
-                Arr::set($menus, $ordered_key, false);
-            }
-        }
-        foreach ($blades as $unordered_key => $route) {
-            Arr::set($menus, $unordered_key, $route);
-        }
-
-        return $this->formatExampleMenus($menus);
-    }
-
-    protected function formatExampleMenus($menus)
-    {
         $icons = [
-            'dashboard' => ':fa-tachometer',
-            'quick-tour' => ':fa-plane',
-            'chart' => ':fa-line-chart',
-            'form' => ':fa-pencil-square-o',
-            'notification' => ':fa-bell-o',
-            'media' => ':fa-video-camera',
-            'layout' => ':fa-object-group',
-            'basic' => ':fa-cubes',
-            'render' => ':fa-paint-brush',
-            'theme' => ':fa-tree',
-            'widget' => ':fa-plug',
+            'dashboard' => 'fa-tachometer',
+            'quick-tour' => 'fa-plane',
+            'chart' => 'fa-line-chart',
+            'form' => 'fa-check-square-o',
+            'notification' => 'fa-bell-o',
+            'media' => 'fa-video-camera',
+            'layout' => 'fa-object-group',
+            'basic' => 'fa-cubes',
+            'editor' => 'fa-pencil-square-o',
+            'theme' => 'fa-tree',
+            'widget' => 'fa-plug',
         ];
-        $formated = [];
-        foreach ($menus as $menu => $info) {
-            if (empty($info)) continue;
-
-            $menu_info = explode(':', $icons[$menu] ?? '');
-            if (empty($menu_info[0]) || $menu_info[0] == "example.$menu") {
-                $menu_info[0] = $menu;
-            }
-            if (empty($menu_info[1])) {
-                $menu_info[1] = 'fa-link';
-            }
-
-            if (is_array($info)) {
-                $formated[] = ['id' => $menu_info[0], 'name' => $menu_info[0], 'icon' => $menu_info[1], 'sub' => $this->formatExampleMenus($info)];
-            } else {
-                $formated[] = ['id' => $info, 'name' => $menu_info[0], 'url' => $info, 'icon' => $menu_info[1]];
-            }
-        }
-        return $formated;
+        return Menu::in($this->exampleBladePath())
+            ->prefix('/lvt/VueAdmin/example/')
+            ->icons($icons)
+            ->get($sort);
     }
 
     protected function exampleBladePath()
