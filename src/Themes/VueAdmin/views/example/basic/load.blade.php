@@ -1,5 +1,21 @@
 @lvt_example
 
+@section('title')
+    load
+@endsection
+
+@section('js')
+    <script>
+        !(function () {
+            duplicate = 1;
+            __destructor = () => {
+                duplicate = null
+                console.log('cleaned up')
+            }
+        })()
+    </script>
+@endsection
+
 <div class="mt-3">
     A Javascript Load helper library is registered to asynchronously load page.
 </div>

@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ isset($title) ? $title: '' }}</title>
+    <title>@yield('title')</title>
 
     <link href="{{ $__theme->mix('/css/app.css') }}" rel="stylesheet">
-    {{ isset($header) ? $header: '' }}
+    @yield('header')
 </head>
 
 <body>
@@ -18,6 +18,7 @@
 <div id="loading">
     <div class="lds-dual-ring"></div>
 </div>
+
 <script>
     (async function f() {
         document.getElementById('loading').style.display = 'none';
@@ -28,7 +29,7 @@
     })();
 </script>
 
-<div id="app">
+<div id="lvt-app">
     <layout-sidebar>
         <template slot="menu">
             @if(isset($menus))
@@ -39,14 +40,14 @@
         </template>
 
         <template slot="header">
-            {{ isset($header_left) ? $header_left: '' }}
+            @yield('header_left')
         </template>
 
         <template slot="header-right">
-            {{ isset($header_right) ? $header_right: '' }}
+            @yield('header_right')
         </template>
 
-        <template id="app-content">
+        <template id="lvt-app-content">
             {{ $slot }}
         </template>
     </layout-sidebar>
@@ -55,7 +56,11 @@
 <script src="{{ $__theme->mix('/js/manifest.js') }}"></script>
 <script src="{{ $__theme->mix('/js/vendor.js') }}"></script>
 <script src="{{ $__theme->mix('/js/app.js') }}"></script>
-{{ isset($footer) ? $footer: '' }}
+
+@yield('import')
+<div id="lvt-app-js">
+    @yield('js')
+</div>
 </body>
 </html>
 

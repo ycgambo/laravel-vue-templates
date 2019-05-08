@@ -16,7 +16,7 @@ TXTDOC
 
 <h1 class="mt-3">Height</h1>
 <div class="mt-3">
-    <text-editor min_height="300px" max_height="400px"></text-editor>
+    <text-editor upload_url="/lvt/VueAdmin/example/img_upload" min_height="300px" max_height="400px"></text-editor>
 </div>
 
 <b-badge class="mt-3" v-b-toggle.height>Source Code</b-badge>

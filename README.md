@@ -87,19 +87,27 @@ You can then inject it by using `_example` in you admin.base blade:
 
 ```php
 @_example
-    @slot('header')
+
+    @section('header')
+        {{-- page css are not dynamic loaded, because there's no way to clean it up once loaded, and it will affect other pages --}}
         {{-- commonly used css --}}
-        @yield('header') {{-- expose for subpages --}}
-    @endslot
-    
-    @yield('title') {{-- expose title for subpages --}}
-    
+    @endsection
+
+    @section('title')
+        @yield('title') {{-- expose title for subpages --}}
+    @endsection
+
     {{ $slot }}
-    
-    @slot('footer')
-        {{-- page footer, commonly used js --}}
+
+    @section('import')
+        {{-- commonly used js --}}
+    @endsection
+
+    @section('js')
+        {{-- these section will be dynamic loaded, and you can use __destructor to clean things up before load another page --}}
         @yield('js') {{-- expose for subpages --}}
-    @endslot
+    @endsection
+   
 @end_example
 ```
 
@@ -107,10 +115,6 @@ And use injected blades:
 
 ```php
 @example
-    @section('header')
-        {{-- page css, SEO stuff --}}
-    @endsection
-
     @section('title')
         Page No 1
     @endsection
@@ -124,7 +128,15 @@ And use injected blades:
     </chart-bar>
     
     @section('js')
-        {{-- page js --}}
+        <script>
+            !(function () {
+                duplicate = 1;
+                __destructor = () => {
+                    duplicate = null
+                    console.log('cleaned up')
+                }
+            })()
+        </script>
     @endsection
 @endexample
 ```
