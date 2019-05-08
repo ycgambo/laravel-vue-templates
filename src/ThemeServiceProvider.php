@@ -75,9 +75,7 @@ class ThemeServiceProvider extends ServiceProvider
         $sort = [
             'dashboard',
             'quick-tour',
-            'basic.load',
-            'basic.url',
-            'basic.store',
+            'basic.helper',
             'basic.notify',
             'basic.confirm',
             'basic.paginate',

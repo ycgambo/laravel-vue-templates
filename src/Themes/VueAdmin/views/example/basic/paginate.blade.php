@@ -1,7 +1,7 @@
 @lvt_example
 
 @php
-    $path = \Illuminate\Support\Facades\URL::current();
+    $path = \Illuminate\Support\Facades\Request::fullUrl();
     $page = request()->get('page', 1);
     $users = new \Illuminate\Pagination\LengthAwarePaginator(array_fill(0, 50, 1), 50, 5, $page,['path' => $path]);
 @endphp
