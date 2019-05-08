@@ -130,10 +130,11 @@ And use injected blades:
     @section('js')
         <script>
             !(function () {
-                duplicate = 1;
+                var i = setInterval(() => {
+                    console.log(123)
+                }, 500)
                 __destructor = () => {
-                    duplicate = null
-                    console.log('cleaned up')
+                    clearInterval(i)
                 }
             })()
         </script>
