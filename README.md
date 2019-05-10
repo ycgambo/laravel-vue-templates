@@ -56,13 +56,24 @@ And use in blades:
 
 ```php
 @example
-    <chart-bar width="100%" height="500px"  title="Title" x-name="xAxis" y-name="yAxis">
-        {
-            "ref": ["13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55"],
-            "Item1": [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122],
-            "Item2": [220, 182, 125, 145, 122, 191, 34, 50, 120, 110, 165, 122]
-        }
-    </chart-bar>
+
+@php
+    $rules = [
+        'name' => 'required|min:3',
+        'email' => 'required|email',
+    ];
+@endphp
+
+<fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
+    @csrf
+    <fm-input label="Name" name="name"></fm-input>
+    <fm-input label="Email" name="email"></fm-input>
+    
+    <el-form-item>
+        <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
+    </el-form-item>
+</fm-form>
+
 @endexample
 ```
 
@@ -115,29 +126,63 @@ And use injected blades:
 
 ```php
 @example
-    @section('title')
-        Page No 1
-    @endsection
-    
-    <chart-bar width="100%" height="500px"  title="Title" x-name="xAxis" y-name="yAxis">
-        {
-            "ref": ["13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55"],
-            "Item1": [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122],
-            "Item2": [220, 182, 125, 145, 122, 191, 34, 50, 120, 110, 165, 122]
-        }
-    </chart-bar>
-    
-    @section('js')
-        <script>
-            !(function () {
-                var i = setInterval(() => {
-                    console.log(123)
-                }, 500)
-                __destructor = () => {
-                    clearInterval(i)
-                }
-            })()
-        </script>
-    @endsection
+
+@php
+    $rules = [
+        'name' => 'required|min:3',
+        'email' => 'required|email',
+    ];
+
+    $data = [
+        'CMCC' => [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122],
+        'C0CC' => [220, 182, 125, 145, 122, 191, 34, 50, 120, 110, 165, 122],
+        'CUCC' => [220, 182, 125, 15, 122, 191, 134, 150, 120, 110, 165, 122],
+    ];
+    $data['ref'] = ["13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55"];
+@endphp
+
+@section('title')
+    Page No 1
+@endsection
+
+<fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
+    @csrf
+    <fm-input label="Name" name="name"></fm-input>
+    <fm-input label="Email" name="email"></fm-input>
+    <fm-date label="Birth" name="birth" type="datetime"></fm-date>
+    <fm-select label="Hometown" name="hometown">
+        <el-option value="Washington" label="Washington">Washington</el-option>
+        <el-option value="Chicago" label="Chicago">Chicago</el-option>
+    </fm-select>
+    <fm-checkbox label="Hobbies">
+        <el-checkbox name="code" label="Code" border checked>Code</el-checkbox>
+        <el-checkbox name="eat" label="Eat" border>Eat</el-checkbox>
+    </fm-checkbox>
+    <fm-switch label="Remember Me" name="remember" on active-color="#13ce66" inactive-color="#ff4949"
+               active-text="Yes"
+               inactive-text="No"></fm-switch>
+    <el-form-item label="Describe Yourself">
+        <text-editor name="describe" upload_url="/lvt/VueAdmin/example/img_upload">{!! $editor !!}</text-editor>
+    </el-form-item>
+    <el-form-item>
+        <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
+    </el-form-item>
+</fm-form>
+
+<chart-line height="400px" smooth="false" x-name="xAxis" y-name="yAxis">@json($data)</chart-line>
+
+@section('js')
+    <script>
+        !(function () {
+            var i = setInterval(() => {
+                console.log(123)
+            }, 500)
+            __destructor = () => {
+                clearInterval(i)
+            }
+        })()
+    </script>
+@endsection
+
 @endexample
 ```
