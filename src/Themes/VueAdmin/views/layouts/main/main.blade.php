@@ -29,6 +29,10 @@
     })();
 </script>
 
+<div id="lvt-app-content" style="display: none">
+    {{ $slot }}
+</div>
+
 <div id="lvt-app">
     <layout-sidebar>
         <template slot="menu">
@@ -47,9 +51,6 @@
             @yield('header_right')
         </template>
 
-        <template id="lvt-app-content">
-            {{ $slot }}
-        </template>
     </layout-sidebar>
 </div>
 

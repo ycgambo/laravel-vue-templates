@@ -17,28 +17,35 @@ __load('/users?page=2', '/users')
 DOC;
 ; !!}</code-base>
 
-<md-renderer v-pre>{!! <<<'DOC'
+<md-renderer v-pre>@php echo e( <<<'DOC'
 Since the new page are loaded without page redirect, there are few things we may need to known.
 
-For javascript section of a blade file, when a new page is requested, the `__destructor` of current page will be executed to clean things up.
+Vue don't compile `script` tag, you should write javascript in js section of a blade file.
+
+When a new page is requested, the `__destructor` of current page will be executed to clean things up,
+and then execute the scripts of new page.
 
 ```
-!(function () {
-    var i = setInterval(() => {
-        console.log(123)
-    }, 500)
-    __destructor = () => {
-        clearInterval(i)
-    }
-})()
+@section('js')
+    <script>
+        !(function () {
+            var i = setInterval(() => {
+                console.log(123)
+            }, 500)
+            __destructor = () => {
+                clearInterval(i)
+            }
+        })()
+    </script>
+@endsection('js')
 ```
 
 Page css is not allowed because it's hard to undo the effects once it's loaded asynchronously.
 
 You should load all the css files you may need on the base page and change page style by using javascript.
 
-DOC;
-; !!}</md-renderer>
+DOC
+)@endphp</md-renderer>
 
 
 <h1 class="mt-3">Url</h1>
@@ -69,26 +76,26 @@ DOC;
 </div>
 
 <code-base v-pre>{!! <<<'DOC'
-// Store current user
-__store.set('user', { name:'Marcus' })
+    // Store current user
+    __store.set('user', { name:'Marcus' })
 
-// Get current user
-__store.get('user')
+    // Get current user
+    __store.get('user')
 
-// Remove current user
-__store.remove('user')
+    // Remove current user
+    __store.remove('user')
 
-// Clear all keys
-__store.clearAll()
+    // Clear all keys
+    __store.clearAll()
 
-// Loop over all stored values
-__store.each(function(value, key) {
-    console.log(key, '==', value)
-})
+    // Loop over all stored values
+    __store.each(function(value, key) {
+        console.log(key, '==', value)
+    })
 
-__store.set('foo', 'bar 1')
-__store.set('foo', 'bar 2')
-__store.getHistory('foo') == ['bar 1', 'bar 2']
+    __store.set('foo', 'bar 1')
+    __store.set('foo', 'bar 2')
+    __store.getHistory('foo') == ['bar 1', 'bar 2']
 DOC;
 ; !!}</code-base>
 
