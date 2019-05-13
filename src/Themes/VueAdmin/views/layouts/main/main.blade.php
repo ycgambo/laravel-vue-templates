@@ -29,9 +29,10 @@
     })();
 </script>
 
-<div id="lvt-app-content" style="display: none">
-    {{ $slot }}
-</div>
+<div id="lvt-app-content" style="display: none">{{ $slot }}</div>
+<div id="lvt-app-header-lr" style="display: none">@yield('header-lr')</div>
+<div id="lvt-app-header-rl" style="display: none">@yield('header-rl')</div>
+<div id="lvt-app-header-rr" style="display: none">@yield('header-rr')</div>
 
 <div id="lvt-app">
     <layout-sidebar>
@@ -42,15 +43,6 @@
                 @include($__theme->view('layouts.main.no-menu'))
             @endif
         </template>
-
-        <template slot="header">
-            @yield('header_left')
-        </template>
-
-        <template slot="header-right">
-            @yield('header_right')
-        </template>
-
     </layout-sidebar>
 </div>
 
@@ -59,9 +51,7 @@
 <script src="{{ $__theme->mix('/js/app.js') }}"></script>
 
 @yield('import')
-<div id="lvt-app-js">
-    @yield('js')
-</div>
+<div id="lvt-app-js">@yield('js')</div>
 </body>
 </html>
 

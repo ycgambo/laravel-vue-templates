@@ -9,6 +9,18 @@
     @yield('title') {{-- expose title for subpages --}}
 @endsection
 
+@section('header-lr')
+    @yield('header-lr') {{-- expose for subpages --}}
+@endsection
+
+@section('header-rl')
+    @yield('header-rl') {{-- expose for subpages --}}
+@endsection
+
+@section('header-rr')
+    @yield('header-rr') {{-- expose for subpages --}}
+@endsection
+
 {{ $slot }}
 
 @section('import')
