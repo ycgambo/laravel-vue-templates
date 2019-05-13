@@ -80,7 +80,7 @@
 
 <h1 class="mt-3">Check Submits</h1>
 <fm-form method="post" action="/lvt/VueAdmin/example/submit">
-    @csrf
+    {{ csrf_field() }}
     <fm-input name="bb" placeholder="new placeholder"></fm-input>
     <fm-number name="ll"></fm-number>
     <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>

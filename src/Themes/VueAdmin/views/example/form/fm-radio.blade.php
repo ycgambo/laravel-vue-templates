@@ -71,7 +71,7 @@
 
 <h1 class="mt-3">Check Submits</h1>
 <fm-form method="post" action="/lvt/VueAdmin/example/submit">
-    @csrf
+    {{ csrf_field() }}
     <fm-radio value="Chicago">
         <el-radio-button name="city" label="New York"></el-radio-button>
         <el-radio-button name="city" label="Washington"></el-radio-button>

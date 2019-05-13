@@ -72,7 +72,7 @@
 
 <h1 class="mt-3">Check Submits</h1>
 <fm-form method="post" action="/lvt/VueAdmin/example/submit">
-    @csrf
+    {{ csrf_field() }}
     <fm-checkbox value="Chicago,New York">
         <el-checkbox name="new_york" label="New York"></el-checkbox>
         <el-checkbox name="washington" label="Washington"></el-checkbox>

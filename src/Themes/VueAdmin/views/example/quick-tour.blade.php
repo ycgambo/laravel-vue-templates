@@ -56,7 +56,7 @@ DOC;
             </div>
 
             <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-                @csrf
+                {{ csrf_field() }}
                 <fm-input label="Name" name="name"></fm-input>
                 <fm-input label="Email" name="email"></fm-input>
                 <fm-radio label="Gender" checked="0">

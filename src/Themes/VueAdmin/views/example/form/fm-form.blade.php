@@ -12,7 +12,7 @@
 <h1 class="mt-3">General Usage</h1>
 <div class="mt-3">
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-        @csrf
+        {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
         <fm-date label="Birth" name="birth" type="datetime"></fm-date>
         <fm-radio label="Gender" checked="0">
@@ -38,7 +38,7 @@
 <b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
 <b-collapse id="default" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-        @csrf
+        {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
         <fm-date label="Birth" name="birth" type="datetime"></fm-date>
         <fm-radio label="Gender" checked="0">
@@ -70,7 +70,7 @@ DOC;
 ; !!}</md-renderer>
 <div class="mt-3">
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-        @csrf
+        {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
         <fm-input label="Name2" name="name2"></fm-input>
         <fm-input label="Email" name="email"></fm-input>
@@ -83,7 +83,7 @@ DOC;
 <b-badge class="mt-3" v-b-toggle.rules>Source Code</b-badge>
 <b-collapse id="rules" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-        @csrf
+        {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
         <fm-input label="Name2" name="name2"></fm-input>
         <fm-input label="Email" name="email"></fm-input>
@@ -111,7 +111,7 @@ DOC;
 ; !!}</md-renderer>
 <div class="mt-3">
     <fm-form action="/lvt/VueAdmin/example/submit" method="post">
-        @csrf
+        {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
         <fm-date label="Birth" name="birth" type="datetime"></fm-date>
         <fm-radio label="Gender" checked="0">
@@ -137,7 +137,7 @@ DOC;
 <b-badge class="mt-3" v-b-toggle.label>Source Code</b-badge>
 <b-collapse id="label" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post">
-        @csrf
+        {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
         <fm-date label="Birth" name="birth" type="datetime"></fm-date>
         <fm-radio label="Gender" checked="0">

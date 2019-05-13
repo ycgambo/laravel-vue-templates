@@ -62,10 +62,10 @@ abstract class Theme
         View::addNamespace($this->namespace, $this->viewPath());
 
         if (empty($this->inject)) {
-            Blade::component($viewName, $this->alias);
+            $this->component($viewName, $this->alias);
         } else {
-            Blade::component($viewName, "_{$this->alias}");
-            Blade::component($this->inject, $this->alias);
+            $this->component($viewName, "_{$this->alias}");
+            $this->component($this->inject, $this->alias);
         }
 
         // 加载当前view的时候再创建绑定，防止同一个主题使用多次时变量被覆盖
@@ -77,6 +77,24 @@ abstract class Theme
         });
 
         return $this;
+    }
+
+    /**
+     * compability for laravel framework version < 5.6
+     * @param $path
+     * @param null $alias
+     */
+    public function component($path, $alias = null)
+    {
+        Blade::directive($alias, function ($expression) use ($path) {
+            return $expression
+                ? "<?php \$__env->startComponent('{$path}', {$expression}); ?>"
+                : "<?php \$__env->startComponent('{$path}'); ?>";
+        });
+
+        Blade::directive('end'.$alias, function ($expression) {
+            return '<?php echo $__env->renderComponent(); ?>';
+        });
     }
 
     public function viewPath()

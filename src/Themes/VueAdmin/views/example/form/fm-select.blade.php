@@ -1,7 +1,7 @@
 @lvt_example
 
 <h1 class="mt-3">Select Basics</h1>
-<fm-select name="select1">
+<fm-select name="select1" value="value">
     <el-option value="value" label="label" disabled></el-option>
     <el-option value="value2" label="label2"></el-option>
     <el-option value="value3" label="label3"></el-option>
@@ -88,7 +88,7 @@
 
 <h1 class="mt-3">Check Submits</h1>
 <fm-form method="post" action="/lvt/VueAdmin/example/submit">
-    @csrf
+    {{ csrf_field() }}
     <fm-select name="select3" multiple multiple-limit="3">
         <el-option value="value" label="label"></el-option>
         <el-option value="value2" label="label2"></el-option>

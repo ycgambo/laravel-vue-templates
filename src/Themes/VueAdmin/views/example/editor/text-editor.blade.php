@@ -53,7 +53,7 @@ TXTDOC
 <h1 class="mt-3">Check Submits</h1>
 <fm-form method="post" action="/lvt/VueAdmin/example/submit">
     <text-editor name="input"></text-editor>
-    @csrf
+    {{ csrf_field() }}
     <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
 </fm-form>
 
