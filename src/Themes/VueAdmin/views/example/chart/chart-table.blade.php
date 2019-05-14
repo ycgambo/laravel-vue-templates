@@ -26,10 +26,34 @@ DOC;
 </div>
 
 <b-badge variant="primary" v-b-toggle.table>source code</b-badge>
-<b-collapse id="table" class="mt-2"><code-html>@php echo e( <<<'DOC'
+<b-collapse id="table" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
     <chart-table>@json($data)</chart-table>
 DOC
 )@endphp</code-html></b-collapse>
 
+
+<h1 class="mt-3">ElementUI</h1>
+<div class="mt-3">
+    <el-table :data='@json($data)' border style="width: 100%">
+        <el-table-column prop="age" label="Age" width="100"></el-table-column>
+        <el-table-column prop="first_name" label="First Name"></el-table-column>
+        <el-table-column prop="last_name" label="Last Name"></el-table-column>
+        <el-table-column prop="isActive" label="Active"></el-table-column>
+    </el-table>
+</div>
+
+<b-badge variant="primary" v-b-toggle.el>source code</b-badge>
+<b-collapse id="el" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
+    <el-table :data='@json($data)' border style="width: 100%">
+        <el-table-column prop="age" label="Age" width="100"></el-table-column>
+        <el-table-column prop="first_name" label="First Name"></el-table-column>
+        <el-table-column prop="last_name" label="Last Name"></el-table-column>
+        <el-table-column prop="isActive" label="Active"></el-table-column>
+    </el-table>
+DOC
+)@endphp</code-html><md-renderer v-pre>@php echo e( <<<'DOC'
+For Eloquent pagination, you may use `:data='@json($paginator->toArray()['data'])'` to bind data.
+DOC
+)@endphp</md-renderer></b-collapse>
 
 @endlvt_example
