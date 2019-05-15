@@ -72,9 +72,8 @@ DOC;
                     <el-checkbox name="code" label="Code" border checked>Code</el-checkbox>
                     <el-checkbox name="eat" label="Eat" border>Eat</el-checkbox>
                 </fm-checkbox>
-                <fm-switch label="Remember Me" name="remember" on active-color="#13ce66" inactive-color="#ff4949"
-                           active-text="Yes"
-                           inactive-text="No"></fm-switch>
+                <fm-switch label="Remember Me" name="remember" on></fm-switch>
+                <fm-upload label="Avatar" name="avatar" action="/lvt/VueAdmin/example/fm_upload" list-type="picture-card"></fm-upload>
                 <el-form-item label="Describe Yourself">
                     <text-editor name="describe" upload_url="/lvt/VueAdmin/example/img_upload">{!! $editor !!}</text-editor>
                 </el-form-item>

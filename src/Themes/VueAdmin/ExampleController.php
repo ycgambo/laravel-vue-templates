@@ -18,6 +18,13 @@ class ExampleController extends BaseController
             'location' => $uploaded_file = '/images/img.jpg'
         ];
     }
+    
+    public function fmUpload(Request $request)
+    {
+        return [
+            'url' => $uploaded_file = '/images/img.jpg'
+        ];
+    }
 
     public function fileUpload(Request $request)
     {

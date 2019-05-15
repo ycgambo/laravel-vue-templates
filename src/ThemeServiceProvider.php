@@ -52,6 +52,7 @@ class ThemeServiceProvider extends ServiceProvider
                 $router->any('/submit', 'ExampleController@checkSubmit');
                 $router->post('/upload', 'ExampleController@fileUpload');
                 $router->post('/img_upload', 'ExampleController@imgUpload');
+                $router->post('/fm_upload', 'ExampleController@fmUpload');
 
                 foreach (array_keys(File::index($this->exampleBladePath(), '*.blade.php')) as $key) {
                     $key = basename($key, '.blade.php');
