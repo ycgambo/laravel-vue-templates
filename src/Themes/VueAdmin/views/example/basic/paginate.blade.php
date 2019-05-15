@@ -32,7 +32,10 @@ DOC
     {{ $users->links() }}
     {{ $users->links('pagination::bootstrap-4') }}
 DOC
-)@endphp</code-php><p class="mt-3">The `lvt` prefix is the namespace that VueAdmin registered</p></b-collapse>
+)@endphp</code-php><md-renderer v-pre>@php echo e( <<<'DOC'
+> The `lvt` prefix is the namespace that VueAdmin registered
+DOC
+)@endphp</md-renderer></b-collapse>
 
 
 <md-renderer v-pre>@php echo e( <<<'DOC'

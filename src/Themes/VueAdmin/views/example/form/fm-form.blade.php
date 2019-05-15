@@ -13,7 +13,7 @@
 <div class="mt-3">
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
         {{ csrf_field() }}
-        <fm-input label="Name" name="name"></fm-input>
+        <fm-input label="Name" name="name" tip="tips"></fm-input>
         <fm-date label="Birth" name="birth" type="datetime"></fm-date>
         <fm-radio label="Gender" checked="0">
             <el-radio name="gender" label="0" border>Male</el-radio>
