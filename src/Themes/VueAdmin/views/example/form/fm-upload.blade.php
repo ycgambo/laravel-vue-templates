@@ -13,6 +13,7 @@
 <fm-upload name="file1" action="/lvt/VueAdmin/example/fm_upload" list-type="picture-card" multiple :multiple-limit="1"></fm-upload>
 
 <h1 class="mt-3">Default Value</h1>
+<p>Upload trigger will hide when file num limit is reached</p>
 <fm-upload name="file1" action="/lvt/VueAdmin/example/fm_upload" value='@json(["/images/img.jpg"])'></fm-upload>
 
 <h1 class="mt-3">Custom Trigger</h1>
