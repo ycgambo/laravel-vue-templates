@@ -118,9 +118,13 @@ class ThemeServiceProvider extends ServiceProvider
             'theme' => 'fa-tree',
             'widget' => 'fa-plug',
         ];
+        $ignores = [
+            'layout.modal'
+        ];
         return Menu::in($this->exampleBladePath())
             ->prefix('/lvt/VueAdmin/example/')
             ->icons($icons)
+            ->ignores($ignores)
             ->get($sort);
     }
 
