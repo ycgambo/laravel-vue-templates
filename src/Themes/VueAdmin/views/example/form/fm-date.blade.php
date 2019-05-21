@@ -13,13 +13,13 @@
 <fm-date name="datetimerange" type="datetimerange" placeholder="start,end"></fm-date>
 
 <h1 class="mt-3">Default Value</h1>
-<fm-date name="datetime2" type="datetime" value="{{time()}}}"></fm-date>
+<fm-date name="datetime2" type="datetime" value="{{time()}}"></fm-date>
 <fm-date name="daterange2" type="daterange" value="{{strtotime('-1 day')}},{{strtotime('+1 day')}}"></fm-date>
 
 <h1 class="mt-3">Range Limit</h1>
-<fm-date name="date7" type="date" range=",{{time()}}}"></fm-date>
-<fm-date name="date8" type="date" range="{{time()}},}"></fm-date>
-<fm-date name="date8" type="date" range="{{strtotime('-1 day')}},{{strtotime('+1 day')}}"></fm-date>
+<fm-date name="rangelimit1" type="date" range=",{{time()}}"></fm-date>
+<fm-date name="rangelimit2" type="date" range="{{time()}},"></fm-date>
+<fm-date name="rangelimit3" type="date" range="{{strtotime('-1 day')}},{{strtotime('+1 day')}}"></fm-date>
 
 <h1 class="mt-3">Disabled</h1>
 <fm-date name="date2" type="date" disabled></fm-date>
