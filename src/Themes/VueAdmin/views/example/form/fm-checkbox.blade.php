@@ -62,7 +62,7 @@
 <h1 class="mt-3">fm-checkbox Attributes</h1>
 <chart-table>
     [
-    {"attribute":"value","description":"default value, comma separated","type":"string","options":"-","default":"—"},
+    {"attribute":"value","description":"default value, comma separated","type":"string","options":"—","default":"—"},
     {"attribute":"size","description":"size of checkbox buttons or bordered checkboxes","type":"string","options":"medium / small / mini","default":"—"},
     {"attribute":"disabled","description":"whether the nesting checkboxes are disabled","type":"boolean","options":"—","default":"false"},
     {"attribute":"min","description":"minimum number of checkbox checked","type":"number","options":"—","default":"—"},

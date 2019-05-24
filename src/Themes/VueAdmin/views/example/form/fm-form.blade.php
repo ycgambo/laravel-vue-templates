@@ -165,13 +165,13 @@ DOC
 <h1 class="mt-3">fm-form Attributes</h1>
 <chart-table>
     [
-    {"attribute":"method","description":"submit method","type":"string","options":"-","default":"post"},
-    {"attribute":"action","description":"submit route","type":"string","options":"-","default":"—"},
-    {"attribute":"enctype","description":"encrypt type","type":"string","options":"-","default":"application/x-www-form-urlencoded"},
+    {"attribute":"method","description":"submit method","type":"string","options":"—","default":"post"},
+    {"attribute":"action","description":"submit route","type":"string","options":"—","default":"—"},
+    {"attribute":"enctype","description":"encrypt type","type":"string","options":"—","default":"application/x-www-form-urlencoded"},
     {"attribute":"size","description":"control the size of components in this form","type":"string","options":"large/small/mini","default":"—"},
     {"attribute":"labelPosition","description":"position of label","type":"string","options":"left/right/top","default":"right"},
-    {"attribute":"labelWidth","description":"width of label.","type":"string","options":"-","default":"150px"},
-    {"attribute":"rules","description":"check rules","type":"string","options":"-","default":"—"}
+    {"attribute":"labelWidth","description":"width of label.","type":"string","options":"—","default":"150px"},
+    {"attribute":"rules","description":"check rules","type":"string","options":"—","default":"—"}
     ]
 </chart-table>
 

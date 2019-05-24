@@ -5,6 +5,9 @@
 
 <h1 class="mt-3">Default on</h1>
 <fm-switch name="switch2" on></fm-switch>
+<fm-switch name="switch2" value="true"></fm-switch>
+<fm-switch name="switch2" value="1" :active=1 :inactive=0></fm-switch>
+<fm-switch name="switch2" on value="false"></fm-switch>
 
 <h1 class="mt-3">Custom Width</h1>
 <fm-switch name="switch3" width="100"></fm-switch>
@@ -35,7 +38,8 @@
     [
     {"attribute":"name","description":"input name of Switch","type":"string","options":"—","default":"—"},
     {"attribute":"disabled","description":"whether Switch is disabled","type":"boolean","options":"—","default":"false"},
-    {"attribute":"on","description":"default on or not","type":"boolean","options":"-","default":"false"},
+    {"attribute":"on","description":"default on or not","type":"boolean","options":"—","default":"false"},
+    {"attribute":"value","description":"default value, higher priority over `on` attribute","type":"boolean / string / number","options":"—","default":"false"},
     {"attribute":"width","description":"width of Switch","type":"number","options":"—","default":"40"},
     {"attribute":"active","description":"switch value when in on state","type":"boolean / string / number","options":"—","default":"true"},
     {"attribute":"inactive","description":"switch value when in off state","type":"boolean / string / number","options":"—","default":"false"},

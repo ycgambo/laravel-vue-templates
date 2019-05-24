@@ -70,7 +70,7 @@
     {"attribute":"size","description":"size of the component","type":"string","options":"large/small","default":"—"},
     {"attribute":"disabled","description":"whether the component is disabled","type":"boolean","options":"—","default":"false"},
     {"attribute":"controls","description":"whether to enable the control buttons","type":"boolean","options":"—","default":"true"},
-    {"attribute":"controls-position","description":"position of the control buttons","type":"string","options":"right","default":"-"},
+    {"attribute":"controls-position","description":"position of the control buttons","type":"string","options":"right","default":"—"},
     {"attribute":"name","description":"same as name in native input","type":"string","options":"—","default":"—"}
     ]
 </chart-table>

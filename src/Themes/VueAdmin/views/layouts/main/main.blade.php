@@ -51,6 +51,7 @@
 <script src="{{ $__theme->mix('/js/app.js') }}"></script>
 
 @yield('import')
+<div id="lvt-app-init">@yield('init')</div>
 <div id="lvt-app-js">@yield('js')</div>
 </body>
 </html>

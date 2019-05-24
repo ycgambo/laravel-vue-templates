@@ -63,7 +63,7 @@
 <h1 class="mt-3">fm-radio Attributes</h1>
 <chart-table>
     [
-    {"attribute":"value","description":"default value","type":"string","options":"-","default":"—"},
+    {"attribute":"value","description":"default value","type":"string","options":"—","default":"—"},
     {"attribute":"size","description":"size of checkbox buttons or bordered checkboxes","type":"string","options":"medium / small / mini","default":"—"},
     {"attribute":"disabled","description":"whether the nesting checkboxes are disabled","type":"boolean","options":"—","default":"false"}
     ]
