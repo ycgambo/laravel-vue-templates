@@ -27,20 +27,24 @@
 安装软件包:
 
     composer require ycgambo/laravel-vue-templates
+    
+把下面这行代码加到`config/app.php`:
+
+    Yb\LVT\ThemeServiceProvider::class,
    
 释放资源:
 
     php artisan vendor:publish --provider='Yb\LVT\ThemeServiceProvider'
-    
-把下面这行代码加到`config/app.php`，如果你想注册例子的路由的话:
-
-    Yb\LVT\ThemeServiceProvider::class,
 
 然后访问`hostname/lvt/VueAdmin/example/dashboard`来查看样例.
 
 > 查看我部署的一个在线[Demo](http://lvt.notee.cc/lvt/VueAdmin/example/dashboard).
 
 > 同时，样例代码也被拷贝到了`resources/laravel-vue-templates`中以供参考.
+
+如果你想移除例子的路由的话，把这行代码注释掉就行了:
+
+    Yb\LVT\ThemeServiceProvider::class,
 
 ## 使用
 
@@ -50,7 +54,7 @@
 
 然后使用即可:
 
-```php
+```
 @example
 
 @php
@@ -73,9 +77,9 @@
 @endexample
 ```
 
-`menus`应该遵循这样的结构，[查看如何构造菜单](https://github.com/ycgambo/laravel-vue-templates/blob/master/src/Menu.php): 
+`menus`应该遵循这样的结构，[查看如何构造菜单](#路由例子): 
 
-```php
+```
 $menus = [
 //  ['id' => 'menu id', 'name' => 'menu name', 'icon' => 'menu icon'，'url' => 'which url to redirect', 'sub' => 'for sub menus', ],
 
@@ -92,13 +96,27 @@ $menus = [
 
 通过注入模板到`admin.base`中并用`_example`来拓展它:
 
-```php
+```
 @_example
 
     @section('header')
         {{-- page css are not dynamic loaded, because there's no way to clean it up once loaded, and it will affect other pages --}}
         {{-- commonly used css --}}
+    @endsectio
+    
+    {{-- custom header icon slots --}}
+    @section('header-lr')
     @endsection
+    @section('header-rl')
+        <a class="header-item" href="#">
+            <i class="fa fa-weixin" aria-hidden="true"></i>
+        </a>
+    @endsection
+    @section('header-rr')
+        <a class="header-item" href="/admin/logout">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </a>
+    @endsectionn
 
     @section('title')
         @yield('title') {{-- expose title for subpages --}}
@@ -112,7 +130,6 @@ $menus = [
 
     @section('js')
         {{-- these section will be dynamic loaded, and you can use __destructor to clean things up before load another page --}}
-        @yield('js') {{-- expose for subpages --}}
     @endsection
    
 @end_example
@@ -120,7 +137,7 @@ $menus = [
 
 然后就可以使用扩展后的自定义模板了:
 
-```php
+```
 @example
 
 @php
@@ -168,6 +185,7 @@ $menus = [
 <chart-line height="400px" smooth="false" x-name="xAxis" y-name="yAxis">@json($data)</chart-line>
 
 @section('js')
+    @parent
     <script>
         !(function () {
             var i = setInterval(() => {
@@ -181,4 +199,72 @@ $menus = [
 @endsection
 
 @endexample
+```
+
+## 路由例子
+
+注册路由: (`app/Providers/RouteServiceProvider.php`)
+
+```
+    public function map()
+    {
+        $this->mapApiRoutes();
+        $this->mapWebRoutes();
+        $this->mapAdminRoutes();
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::prefix('admin')
+            // ->middleware('admin')
+            ->namespace("{$this->namespace}\Admin")
+            ->group(base_path('routes/admin.php'));
+        \Yb\LVT\Themes\VueAdmin\VueAdmin::create('admin', 'admin')
+            ->inject('admin.base')
+            ->with('menus', $this->getAdminMenus())
+            ->paginate()
+            ->boot();
+    }
+
+    protected function getAdminMenus()
+    {
+        $sort = [
+            'index',
+            'consumerMessage.manual',
+        ];
+        $icons = [
+            'index' => 'fa-tachometer',
+            'consumerMessage' => 'fa-commenting-o',
+        ];
+        $names = [
+            'consumerMessage' => '客服消息',
+            'consumerMessage.manual' => '手动发送',
+            'consumerMessage.reply' => '消息回复',
+        ];
+        $ignores = [
+            'base',
+            'consumerMessage.manual_edit',
+            'consumerMessage.reply_edit',
+        ];
+        
+        return \Yb\LVT\Menu::in(resource_path('views/admin'))
+            ->prefix('/admin')
+            ->icons($icons)
+            ->names($names)
+            ->ignores($ignores)
+            ->get($sort);
+    }
+```
+
+view文件夹结构:
+
+```
+resources/views/admin
+├── base.blade.php
+├── consumerMessage
+│   ├── manual.blade.php
+│   ├── manual_edit.blade.php
+│   ├── reply.blade.php
+│   ├── reply_edit.blade.php
+└── index.blade.php
 ```

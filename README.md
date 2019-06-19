@@ -32,19 +32,24 @@ Install package:
 
     composer require ycgambo/laravel-vue-templates
    
+Add this line into your providers in `config/app.php`:
+
+    Yb\LVT\ThemeServiceProvider::class,
+
 Release resource:
 
     php artisan vendor:publish --provider='Yb\LVT\ThemeServiceProvider'
     
-Register the example routes, add this line into your providers in `config/app.php`:
-
-    Yb\LVT\ThemeServiceProvider::class,
-
 Access `hostname/lvt/VueAdmin/example/dashboard` to visit the pages.
 
 > Checkout this online [Demo](http://lvt.notee.cc/lvt/VueAdmin/example/dashboard) that I deployed on my server.
 
 > Also, there are a directory `resources/laravel-vue-templates` which copied out of this package that contains example references.
+
+Comment out this line if you don't want those example routes:
+
+    Yb\LVT\ThemeServiceProvider::class,
+
 
 ## Usage
 
@@ -54,7 +59,7 @@ Register into Blade component:
 
 And use in blades:
 
-```php
+```
 @example
 
 @php
@@ -77,9 +82,9 @@ And use in blades:
 @endexample
 ```
 
-The `menus` is an array like this, [see how to generate it](https://github.com/ycgambo/laravel-vue-templates/blob/master/src/Menu.php):
+The `menus` is an array like this, [see how to generate it](#route-examples):
 
-```php
+```
 $menus = [
 //  ['id' => 'menu id', 'name' => 'menu name', 'icon' => 'menu icon'，'url' => 'which url to redirect', 'sub' => 'for sub menus', ],
 
@@ -96,12 +101,26 @@ If you want to extend the layout:
 
 You can then inject it by using `_example` in you admin.base blade:
 
-```php
+```
 @_example
 
     @section('header')
         {{-- page css are not dynamic loaded, because there's no way to clean it up once loaded, and it will affect other pages --}}
         {{-- commonly used css --}}
+    @endsection
+    
+    {{-- custom header icon slots --}}
+    @section('header-lr')
+    @endsection
+    @section('header-rl')
+        <a class="header-item" href="#">
+            <i class="fa fa-weixin" aria-hidden="true"></i>
+        </a>
+    @endsection
+    @section('header-rr')
+        <a class="header-item" href="/admin/logout">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </a>
     @endsection
 
     @section('title')
@@ -116,15 +135,13 @@ You can then inject it by using `_example` in you admin.base blade:
 
     @section('js')
         {{-- these section will be dynamic loaded, and you can use __destructor to clean things up before load another page --}}
-        @yield('js') {{-- expose for subpages --}}
     @endsection
-   
 @end_example
 ```
 
 And use injected blades:
 
-```php
+```
 @example
 
 @php
@@ -172,6 +189,7 @@ And use injected blades:
 <chart-line height="400px" smooth="false" x-name="xAxis" y-name="yAxis">@json($data)</chart-line>
 
 @section('js')
+    @parent
     <script>
         !(function () {
             var i = setInterval(() => {
@@ -185,4 +203,72 @@ And use injected blades:
 @endsection
 
 @endexample
+```
+
+## Route Examples
+
+Regsiter admin routes: (`app/Providers/RouteServiceProvider.php`)
+
+```
+    public function map()
+    {
+        $this->mapApiRoutes();
+        $this->mapWebRoutes();
+        $this->mapAdminRoutes();
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::prefix('admin')
+            // ->middleware('admin')
+            ->namespace("{$this->namespace}\Admin")
+            ->group(base_path('routes/admin.php'));
+        \Yb\LVT\Themes\VueAdmin\VueAdmin::create('admin', 'admin')
+            ->inject('admin.base')
+            ->with('menus', $this->getAdminMenus())
+            ->paginate()
+            ->boot();
+    }
+
+    protected function getAdminMenus()
+    {
+        $sort = [
+            'index',
+            'consumerMessage.manual',
+        ];
+        $icons = [
+            'index' => 'fa-tachometer',
+            'consumerMessage' => 'fa-commenting-o',
+        ];
+        $names = [
+            'consumerMessage' => '客服消息',
+            'consumerMessage.manual' => '手动发送',
+            'consumerMessage.reply' => '消息回复',
+        ];
+        $ignores = [
+            'base',
+            'consumerMessage.manual_edit',
+            'consumerMessage.reply_edit',
+        ];
+        
+        return \Yb\LVT\Menu::in(resource_path('views/admin'))
+            ->prefix('/admin')
+            ->icons($icons)
+            ->names($names)
+            ->ignores($ignores)
+            ->get($sort);
+    }
+```
+
+The view directory tree:
+
+```
+resources/views/admin
+├── base.blade.php
+├── consumerMessage
+│   ├── manual.blade.php
+│   ├── manual_edit.blade.php
+│   ├── reply.blade.php
+│   ├── reply_edit.blade.php
+└── index.blade.php
 ```
