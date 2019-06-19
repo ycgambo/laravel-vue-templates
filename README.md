@@ -179,7 +179,7 @@ And use injected blades:
                active-text="Yes"
                inactive-text="No"></fm-switch>
     <el-form-item label="Describe Yourself">
-        <text-editor name="describe" upload_url="/lvt/VueAdmin/example/img_upload">{!! $editor !!}</text-editor>
+        <text-editor name="describe" upload_url="/lvt/VueAdmin/example/img_upload">{!! $editor ?? '' !!}</text-editor>
     </el-form-item>
     <el-form-item>
         <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
