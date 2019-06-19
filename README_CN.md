@@ -65,7 +65,7 @@
 @endphp
 
 <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-    @csrf
+    {{ csrf_field() }}
     <fm-input label="Name" name="name"></fm-input>
     <fm-input label="Email" name="email"></fm-input>
     
@@ -159,7 +159,7 @@ $menus = [
 @endsection
 
 <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-    @csrf
+    {{ csrf_field() }}
     <fm-input label="Name" name="name"></fm-input>
     <fm-input label="Email" name="email"></fm-input>
     <fm-date label="Birth" name="birth" type="datetime"></fm-date>

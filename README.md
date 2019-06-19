@@ -70,7 +70,7 @@ And use in blades:
 @endphp
 
 <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-    @csrf
+    {{ csrf_field() }}
     <fm-input label="Name" name="name"></fm-input>
     <fm-input label="Email" name="email"></fm-input>
     
@@ -163,7 +163,7 @@ And use injected blades:
 @endsection
 
 <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-    @csrf
+    {{ csrf_field() }}
     <fm-input label="Name" name="name"></fm-input>
     <fm-input label="Email" name="email"></fm-input>
     <fm-date label="Birth" name="birth" type="datetime"></fm-date>
