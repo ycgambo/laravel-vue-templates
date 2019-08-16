@@ -28,7 +28,7 @@
 
     composer require ycgambo/laravel-vue-templates
     
-把下面这行代码加到`config/app.php`:
+把下面这行代码加到`config/app.php`(laravel 5.8+ 不需要添加):
 
     Yb\LVT\ThemeServiceProvider::class,
    

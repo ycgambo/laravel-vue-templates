@@ -19,6 +19,13 @@
     "php": ">=7.0.0",
     "laravel/framework": "^5.3"
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Yb\\LVT\\ThemeServiceProvider"
+      ]
+    }
+  },
   "autoload": {
     "psr-4": {
       "Yb\\LVT\\": "src/"

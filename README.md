@@ -32,7 +32,7 @@ Install package:
 
     composer require ycgambo/laravel-vue-templates
    
-Add this line into your providers in `config/app.php`:
+Add this line into your providers in `config/app.php`(no need for laravel 5.8+):
 
     Yb\LVT\ThemeServiceProvider::class,
 
