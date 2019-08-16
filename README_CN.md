@@ -102,7 +102,7 @@ $menus = [
     @section('header')
         {{-- page css are not dynamic loaded, because there's no way to clean it up once loaded, and it will affect other pages --}}
         {{-- commonly used css --}}
-    @endsectio
+    @endsection
     
     {{-- custom header icon slots --}}
     @section('header-lr')
@@ -116,7 +116,7 @@ $menus = [
         <a class="header-item" href="/admin/logout">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
         </a>
-    @endsectionn
+    @endsection
 
     @section('title')
         @yield('title') {{-- expose title for subpages --}}
@@ -130,8 +130,14 @@ $menus = [
 
     @section('js')
         {{-- these section will be dynamic loaded, and you can use __destructor to clean things up before load another page --}}
+        @if ($errors->any())
+            <script>
+                @foreach ($errors->all() as $error)
+                    __notify("{{$error}}", 'Error', 'warning')
+                @endforeach
+            </script>
+        @endif
     @endsection
-   
 @end_example
 ```
 

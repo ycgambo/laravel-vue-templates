@@ -135,6 +135,13 @@ You can then inject it by using `_example` in you admin.base blade:
 
     @section('js')
         {{-- these section will be dynamic loaded, and you can use __destructor to clean things up before load another page --}}
+        @if ($errors->any())
+            <script>
+                @foreach ($errors->all() as $error)
+                    __notify("{{$error}}", 'Error', 'warning')
+                @endforeach
+            </script>
+        @endif
     @endsection
 @end_example
 ```
