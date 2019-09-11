@@ -55,7 +55,7 @@ DOC
 )@endphp</code-html></b-collapse>
 
 <h1 class="mt-3">Multiple</h1>
-<fm-select name="select2" multiple>
+<fm-select name="select2" multiple value='["value","value2"]'>
     <el-option value="value" label="label"></el-option>
     <el-option value="value2" label="label2"></el-option>
     <el-option value="value3" label="label3"></el-option>
@@ -112,7 +112,7 @@ DOC
     {"attribute":"name","description":"the name attribute of select input","type":"string","options":"—","default":"—"},
     {"attribute":"value","description":"binding value","type":"string","options":"—","default":"—"},
     {"attribute":"multiple","description":"whether multiple-select is activated","type":"boolean","options":"—","default":"false"},
-    {"attribute":"filter","description":"a window var which is a filter callback","type":"string","options":"—","default":"—"}
+    {"attribute":"filter","description":"a window var which is a filter callback","type":"string","options":"—","default":"—"},
     {"attribute":"disabled","description":"whether Select is disabled","type":"boolean","options":"—","default":"false"},
     {"attribute":"size","description":"size of Input","type":"string","options":"large/small/mini","default":"—"},
     {"attribute":"clearable","description":"whether single select can be cleared","type":"boolean","options":"—","default":"false"},
@@ -137,7 +137,12 @@ DOC
 <h1 class="mt-3">Check Submits</h1>
 <fm-form method="post" action="/lvt/VueAdmin/example/submit">
     {{ csrf_field() }}
-    <fm-select name="select3" multiple multiple-limit="3">
+    <fm-select name="select1">
+        <el-option value="value" label="label"></el-option>
+        <el-option value="value2" label="label2"></el-option>
+        <el-option value="value3" label="label3"></el-option>
+    </fm-select>
+    <fm-select name="select2" multiple multiple-limit="3">
         <el-option value="value" label="label"></el-option>
         <el-option value="value2" label="label2"></el-option>
         <el-option value="value3" label="label3"></el-option>

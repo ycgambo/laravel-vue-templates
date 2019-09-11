@@ -1,7 +1,7 @@
 @lvt_example
 
    <h1 class="mt-3">Light</h1>
-    <code-php v-pre>{!! <<<'DOC'
+    <code-php>{!! <<<'DOC'
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -29,7 +29,7 @@ DOC;
 ; !!}</code-php>
 
     <h1 class="mt-3">Dark</h1>
-    <code-php dark v-pre>{!! <<<'DOC'
+    <code-php dark>{!! <<<'DOC'
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

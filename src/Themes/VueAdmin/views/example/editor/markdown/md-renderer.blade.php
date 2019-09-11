@@ -1,6 +1,6 @@
 @lvt_example
 
-   <md-renderer v-pre>{!! <<<'DOC'
+   <md-renderer>{!! <<<'DOC'
 # hello, This is Markdown Live Preview
 
 ----

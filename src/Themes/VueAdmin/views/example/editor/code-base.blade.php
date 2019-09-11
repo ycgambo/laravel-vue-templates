@@ -1,7 +1,7 @@
 @lvt_example
 
    <h1 class="mt-3">Default</h1>
-    <code-base v-pre>{!! <<<'DOC'
+    <code-base>{!! <<<'DOC'
 [
  {
   _id: "post 1",
@@ -26,7 +26,7 @@ DOC;
 ; !!}</code-base>
 
     <h1 class="mt-3">Dark</h1>
-    <code-base dark v-pre>{!! <<<'DOC'
+    <code-base dark>{!! <<<'DOC'
 [
  {
   _id: "post 1",
@@ -51,7 +51,7 @@ DOC;
 ; !!}</code-base>
 
     <h1 class="mt-3">Readonly</h1>
-    <code-base readonly v-pre>{!! <<<'DOC'
+    <code-base readonly>{!! <<<'DOC'
 [
  {
   _id: "post 1",
@@ -76,7 +76,7 @@ DOC;
 ; !!}</code-base>
 
     <h1 class="mt-3">Size</h1>
-    <code-base dark width="300px" height="200px" v-pre>{!! <<<'DOC'
+    <code-base dark width="300px" height="200px">{!! <<<'DOC'
 [
  {
   _id: "post 1",
@@ -108,7 +108,7 @@ DOC;
         document is always rendered, and thus the browser's text search works on it. This will have bad effects on
         performance of big documents.</p>
     <p>Try search 'xxx' which lays in the end of these codes.</p>
-    <code-base height="200px" infinity="false" v-pre>{!! <<<'DOC'
+    <code-base height="200px" infinity="false">{!! <<<'DOC'
 [
  {
   _id: "post 1",

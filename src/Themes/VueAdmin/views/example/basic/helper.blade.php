@@ -4,7 +4,7 @@
 <h1 class="mt-3">Load</h1>
 
 
-<md-renderer v-pre>{!! <<<'DOC'
+<md-renderer>{!! <<<'DOC'
 A Javascript Load helper is registered to asynchronously load page.
 
 By providing the second param menu_id to manually refresh the active sidebar menu
@@ -17,7 +17,7 @@ __load('/users?page=2', '/users')
 DOC;
 ; !!}</code-base>
 
-<md-renderer v-pre>@php echo e( <<<'DOC'
+<md-renderer>@php echo e( <<<'DOC'
 Since the new page are loaded without page redirect, there are few things we may need to known.
 
 Vue don't compile `script` tag, you should write javascript in js section of a blade file.
@@ -49,25 +49,25 @@ DOC
 
 
 <h1 class="mt-3">Url</h1>
-<md-renderer v-pre>{!! <<<'DOC'
+<md-renderer>{!! <<<'DOC'
 A Javascript [Url](https://www.npmjs.com/package/url) helper library is registered.
 
 Additionally, a `__url.param` function helps when dealing with param repalcement.
 DOC;
 ; !!}</md-renderer>
 
-<code-base v-pre>{!! <<<'DOC'
-    __url.resolve('http://example.com/', '/one')    // 'http://example.com/one'
-    __url.resolve('http://example.com/one', '/two') // 'http://example.com/two'
-    __url.resolve('/one/two/three', 'four')         // '/one/two/four'
-    __url.resolve('/one/two/five?page=1', '?page=2') // '/one/two/five?page=2'
-    __url.param('/one/two/five?page=1&key=abc', 'page=2') // '/one/two/five?key=abc&page=2'
+<code-base>{!! <<<'DOC'
+__url.resolve('http://example.com/', '/one')    // 'http://example.com/one'
+__url.resolve('http://example.com/one', '/two') // 'http://example.com/two'
+__url.resolve('/one/two/three', 'four')         // '/one/two/four'
+__url.resolve('/one/two/five?page=1', '?page=2') // '/one/two/five?page=2'
+__url.param('/one/two/five?page=1&key=abc', 'page=2') // '/one/two/five?key=abc&page=2'
 DOC;
 ; !!}</code-base>
 
 
 <h1 class="mt-3">Store</h1>
-<md-renderer v-pre>{!! <<<'DOC'
+<md-renderer>{!! <<<'DOC'
 A Javascript [Store](https://www.npmjs.com/package/store) helper library is registered.
 DOC;
 ; !!}</md-renderer>
@@ -75,27 +75,27 @@ DOC;
 <div class="mt-3">
 </div>
 
-<code-base v-pre>{!! <<<'DOC'
-    // Store current user
-    __store.set('user', { name:'Marcus' })
+<code-base>{!! <<<'DOC'
+// Store current user
+__store.set('user', { name:'Marcus' })
 
-    // Get current user
-    __store.get('user')
+// Get current user
+__store.get('user')
 
-    // Remove current user
-    __store.remove('user')
+// Remove current user
+__store.remove('user')
 
-    // Clear all keys
-    __store.clearAll()
+// Clear all keys
+__store.clearAll()
 
-    // Loop over all stored values
-    __store.each(function(value, key) {
-        console.log(key, '==', value)
-    })
+// Loop over all stored values
+__store.each(function(value, key) {
+    console.log(key, '==', value)
+})
 
-    __store.set('foo', 'bar 1')
-    __store.set('foo', 'bar 2')
-    __store.getHistory('foo') == ['bar 1', 'bar 2']
+__store.set('foo', 'bar 1')
+__store.set('foo', 'bar 2')
+__store.getHistory('foo') == ['bar 1', 'bar 2']
 DOC;
 ; !!}</code-base>
 

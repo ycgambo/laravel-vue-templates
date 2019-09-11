@@ -6,7 +6,7 @@
     $users = new \Illuminate\Pagination\LengthAwarePaginator(array_fill(0, 50, 1), 50, 5, $page,['path' => $path]);
 @endphp
 
-<md-renderer v-pre>@php echo e( <<<'DOC'
+<md-renderer>{!! <<<'DOC'
 A paginate method is provided to replace the default laravel bootstrap 4 pagination link style.
 
 ```php
@@ -14,8 +14,8 @@ A paginate method is provided to replace the default laravel bootstrap 4 paginat
 ```
 
 If you want to use the default bootstrap 4 pagination style simultaneously, use `links('pagination::bootstrap-4')`.
-DOC
-)@endphp}</md-renderer>
+DOC;
+; !!}</md-renderer>
 
 <h1 class="mt-3">Default</h1>
 <div class="mt-3">
@@ -28,24 +28,24 @@ DOC
 </div>
 
 <b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
-<b-collapse id="default" class="mt-2"><code-php v-pre>@php echo e( <<<'DOC'
+<b-collapse id="default" class="mt-2"><code-php>{!! <<<'DOC'
     {{ $users->links() }}
     {{ $users->links('pagination::bootstrap-4') }}
-DOC
-)@endphp</code-php><md-renderer v-pre>@php echo e( <<<'DOC'
+DOC;
+; !!}</code-php><md-renderer>{!! <<<'DOC'
 > The `lvt` prefix is the namespace that VueAdmin registered
-DOC
-)@endphp</md-renderer></b-collapse>
+DOC;
+; !!}</md-renderer></b-collapse>
 
 
-<md-renderer v-pre>@php echo e( <<<'DOC'
+<md-renderer>{!! <<<'DOC'
 When there's more than one pagination links, remember to change the pagination param name to avoid conflicts.
 
 ```php
 $paginator = App\Models\SomeModel::paginate(10, ['*'], 'another_page_param');
 $paginator->setPageName('another_page_param');
 ```
-DOC
-)@endphp</md-renderer>
+DOC;
+; !!}</md-renderer>
 
 @endlvt_example

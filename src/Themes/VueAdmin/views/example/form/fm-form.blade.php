@@ -36,7 +36,7 @@
 </div>
 
 <b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
-<b-collapse id="default" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
+<b-collapse id="default" class="mt-2"><code-html>{!! <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
         {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
@@ -59,12 +59,12 @@
             <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
         </el-form-item>
     </fm-form>
-DOC
-)@endphp</code-html></b-collapse>
+DOC;
+; !!}</code-html></b-collapse>
 
 
 <h1 class="mt-3">Rules</h1>
-<md-renderer v-pre>{!! <<<'DOC'
+<md-renderer>{!! <<<'DOC'
 Form rules check are implemented by `fm-input`.
 DOC;
 ; !!}</md-renderer>
@@ -81,7 +81,7 @@ DOC;
 </div>
 
 <b-badge class="mt-3" v-b-toggle.rules>Source Code</b-badge>
-<b-collapse id="rules" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
+<b-collapse id="rules" class="mt-2"><code-html>{!! <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
         {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
@@ -91,8 +91,8 @@ DOC;
             <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
         </el-form-item>
     </fm-form>
-DOC
-)@endphp</code-html><code-php>{!! <<<'DOC'
+DOC;
+; !!}</code-html><code-php>{!! <<<'DOC'
 $rules = [
     'name' => 'required|min:3',
     'email' => 'required|email',
@@ -103,7 +103,7 @@ DOC;
 
 
 <h1 class="mt-3">Label supports</h1>
-<md-renderer v-pre>{!! <<<'DOC'
+<md-renderer>{!! <<<'DOC'
 Tags that started with `fm-` prefix supports label syntax.
 
 Editor and buttons don't support this yet still can use `el-form-item` explicitly.
@@ -135,7 +135,7 @@ DOC;
 </div>
 
 <b-badge class="mt-3" v-b-toggle.label>Source Code</b-badge>
-<b-collapse id="label" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
+<b-collapse id="label" class="mt-2"><code-html>{!! <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post">
         {{ csrf_field() }}
         <fm-input label="Name" name="name"></fm-input>
@@ -158,8 +158,8 @@ DOC;
             <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
         </el-form-item>
     </fm-form>
-DOC
-)@endphp</code-html></b-collapse>
+DOC;
+; !!}</code-html></b-collapse>
 
 
 <h1 class="mt-3">fm-form Attributes</h1>
