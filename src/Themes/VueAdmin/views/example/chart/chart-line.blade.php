@@ -27,7 +27,7 @@ DOC;
     <chart-line refs='@json($refs)' legends='@json($legends)' height="500px" title="Title" x-name="xAxis" y-name="yAxis">@json($data)</chart-line>
 </div>
 
-<b-badge variant="primary" v-b-toggle.zigzag>source code</b-badge>
+<b-badge class="mt-3" v-b-toggle.zigzag>source code</b-badge>
 <b-collapse id="zigzag" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-line refs='@json($refs)' legends='@json($legends)' height="500px" title="Title" x-name="xAxis" y-name="yAxis">@json($data)</chart-line>
 DOC
@@ -39,7 +39,7 @@ DOC
     <chart-line refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" smooth>@json($data)</chart-line>
 </div>
 
-<b-badge variant="primary" v-b-toggle.smooth>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.smooth>Source Code</b-badge>
 <b-collapse id="smooth" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-line refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" smooth>@json($data)</chart-line>
 DOC
@@ -51,7 +51,7 @@ DOC
     <chart-line refs='@json($refs)'height="500px" title="Title" x-name="xAxis" y-name="yAxis" step="start">@json($data)</chart-line>
 </div>
 
-<b-badge variant="primary" v-b-toggle.step>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.step>Source Code</b-badge>
 <b-collapse id="step" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-line refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" step="start">@json($data)</chart-line>
 DOC
@@ -63,7 +63,7 @@ DOC
     <chart-line refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" step="middle">@json($data)</chart-line>
 </div>
 
-<b-badge variant="primary" v-b-toggle.step>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.step>Source Code</b-badge>
 <b-collapse id="step" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-line refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" step="middle">@json($data)</chart-line>
 DOC
@@ -75,7 +75,7 @@ DOC
     <chart-line refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" step="end">@json($data)</chart-line>
 </div>
 
-<b-badge variant="primary" v-b-toggle.step>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.step>Source Code</b-badge>
 <b-collapse id="step" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-line refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" step="end">@json($data)</chart-line>
 DOC

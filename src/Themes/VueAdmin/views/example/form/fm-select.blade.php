@@ -1,11 +1,58 @@
 @lvt_example
 
+@section('js')
+    <script>
+        window.filterFunc = (input) => {
+          console.log(input)
+          return [
+            {
+              label: 'xxx',
+              value: 'xxx'
+            }
+          ]
+        }
+        __destructor = () => {
+          window.filterFunc = undefined
+        }
+    </script>
+@endsection
+
 <h1 class="mt-3">Select Basics</h1>
 <fm-select name="select1" value="value">
     <el-option value="value" label="label" disabled></el-option>
     <el-option value="value2" label="label2"></el-option>
     <el-option value="value3" label="label3"></el-option>
 </fm-select>
+
+<h1 class="mt-3">Filter</h1>
+<fm-select name="select1" value="value" filter="filterFunc">
+    <el-option value="value" label="label"></el-option>
+</fm-select>
+
+<b-badge class="mt-3" v-b-toggle.filter>Source Code</b-badge>
+<b-collapse id="filter" class="mt-2"><code-html>@php echo e( <<<'DOC'
+<fm-select name="select1" value="value" filter="filterFunc">
+    <el-option value="value" label="label"></el-option>
+</fm-select>
+
+@section('js')
+    <script>
+        window.filterFunc = (input) => {
+          console.log(input)
+          return [
+            {
+              label: 'xxx',
+              value: 'xxx'
+            }
+          ]
+        }
+        __destructor = () => {
+          window.filterFunc = undefined
+        }
+    </script>
+@endsection
+DOC
+)@endphp</code-html></b-collapse>
 
 <h1 class="mt-3">Multiple</h1>
 <fm-select name="select2" multiple>
@@ -65,6 +112,7 @@
     {"attribute":"name","description":"the name attribute of select input","type":"string","options":"—","default":"—"},
     {"attribute":"value","description":"binding value","type":"string","options":"—","default":"—"},
     {"attribute":"multiple","description":"whether multiple-select is activated","type":"boolean","options":"—","default":"false"},
+    {"attribute":"filter","description":"a window var which is a filter callback","type":"string","options":"—","default":"—"}
     {"attribute":"disabled","description":"whether Select is disabled","type":"boolean","options":"—","default":"false"},
     {"attribute":"size","description":"size of Input","type":"string","options":"large/small/mini","default":"—"},
     {"attribute":"clearable","description":"whether single select can be cleared","type":"boolean","options":"—","default":"false"},

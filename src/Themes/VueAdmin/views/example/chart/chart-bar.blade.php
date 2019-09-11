@@ -27,7 +27,7 @@ DOC;
     <chart-bar refs='@json($refs)' legends='@json($legends)' height="500px" title="Title" x-name="xAxis" y-name="yAxis">@json($data)</chart-bar>
 </div>
 
-<b-badge variant="primary" v-b-toggle.default>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
 <b-collapse id="default" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-bar refs='@json($refs)' legends='@json($legends)' height="500px" title="Title" x-name="xAxis" y-name="yAxis">@json($data)</chart-bar>
 DOC
@@ -39,7 +39,7 @@ DOC
     <chart-bar refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" stack>@json($data)</chart-bar>
 </div>
 
-<b-badge variant="primary" v-b-toggle.stack>Source Code</b-badge>
+<b-badge class="mt-3" v-b-toggle.stack>Source Code</b-badge>
 <b-collapse id="stack" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-bar refs='@json($refs)' height="500px" title="Title" x-name="xAxis" y-name="yAxis" stack>@json($data)</chart-bar>
 DOC

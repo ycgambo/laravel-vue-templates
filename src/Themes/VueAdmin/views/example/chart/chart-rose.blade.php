@@ -27,7 +27,7 @@ DOC;
     <chart-rose width="100%" height="500px" title="Area" type="area">@json($data)</chart-rose>
 </div>
 
-<b-badge variant="primary" v-b-toggle.area>source code</b-badge>
+<b-badge class="mt-3" v-b-toggle.area>source code</b-badge>
 <b-collapse id="area" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-rose width="100%" height="500px" title="Area" type="area">@json($data)</chart-rose>
 DOC
@@ -39,7 +39,7 @@ DOC
     <chart-rose width="100%" height="500px" title="Radius" type="radius">@json($data)</chart-rose>
 </div>
 
-<b-badge variant="primary" v-b-toggle.radius>source code</b-badge>
+<b-badge class="mt-3" v-b-toggle.radius>source code</b-badge>
 <b-collapse id="radius" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <chart-rose width="100%" height="500px" title="Radius" type="radius">@json($data)</chart-rose>
 DOC

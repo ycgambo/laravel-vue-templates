@@ -25,7 +25,7 @@ DOC;
     <chart-table>@json($data)</chart-table>
 </div>
 
-<b-badge variant="primary" v-b-toggle.table>source code</b-badge>
+<b-badge class="mt-3" v-b-toggle.table>source code</b-badge>
 <b-collapse id="table" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
     <chart-table>@json($data)</chart-table>
 DOC
@@ -42,7 +42,7 @@ DOC
     </el-table>
 </div>
 
-<b-badge variant="primary" v-b-toggle.el>source code</b-badge>
+<b-badge class="mt-3" v-b-toggle.el>source code</b-badge>
 <b-collapse id="el" class="mt-2"><code-html v-pre>@php echo e( <<<'DOC'
     <el-table :data='@json($data)' border style="width: 100%">
         <el-table-column prop="age" label="Age" width="100"></el-table-column>
