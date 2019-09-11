@@ -36,9 +36,9 @@
 </div>
 
 <b-badge class="mt-3" v-b-toggle.default>Source Code</b-badge>
-<b-collapse id="default" class="mt-2"><code-html>{!! <<<'DOC'
+<b-collapse id="default" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-        {{ csrf_field() }}
+        @csrf
         <fm-input label="Name" name="name"></fm-input>
         <fm-date label="Birth" name="birth" type="datetime"></fm-date>
         <fm-radio label="Gender" checked="0">
@@ -59,8 +59,8 @@
             <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
         </el-form-item>
     </fm-form>
-DOC;
-; !!}</code-html></b-collapse>
+DOC
+)@endphp</code-html></b-collapse>
 
 
 <h1 class="mt-3">Rules</h1>
@@ -81,9 +81,9 @@ DOC;
 </div>
 
 <b-badge class="mt-3" v-b-toggle.rules>Source Code</b-badge>
-<b-collapse id="rules" class="mt-2"><code-html>{!! <<<'DOC'
+<b-collapse id="rules" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post" size="small" rules='@json($rules)'>
-        {{ csrf_field() }}
+        @csrf
         <fm-input label="Name" name="name"></fm-input>
         <fm-input label="Name2" name="name2"></fm-input>
         <fm-input label="Email" name="email"></fm-input>
@@ -91,8 +91,8 @@ DOC;
             <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
         </el-form-item>
     </fm-form>
-DOC;
-; !!}</code-html><code-php>{!! <<<'DOC'
+DOC
+)@endphp</code-html><code-php>{!! <<<'DOC'
 $rules = [
     'name' => 'required|min:3',
     'email' => 'required|email',
@@ -135,9 +135,9 @@ DOC;
 </div>
 
 <b-badge class="mt-3" v-b-toggle.label>Source Code</b-badge>
-<b-collapse id="label" class="mt-2"><code-html>{!! <<<'DOC'
+<b-collapse id="label" class="mt-2"><code-html>@php echo e( <<<'DOC'
     <fm-form action="/lvt/VueAdmin/example/submit" method="post">
-        {{ csrf_field() }}
+        @csrf
         <fm-input label="Name" name="name"></fm-input>
         <fm-date label="Birth" name="birth" type="datetime"></fm-date>
         <fm-radio label="Gender" checked="0">
@@ -158,8 +158,8 @@ DOC;
             <el-button class="pull-right" type="primary" native-type="submit">Check It Out</el-button>
         </el-form-item>
     </fm-form>
-DOC;
-; !!}</code-html></b-collapse>
+DOC
+)@endphp</code-html></b-collapse>
 
 
 <h1 class="mt-3">fm-form Attributes</h1>
