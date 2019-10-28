@@ -7,7 +7,7 @@ A Laravel admin template to generate dynamic Vue tags in blades. Focus on data, 
 
 ## Why
 
-Though Laravel Blade and Vue are handy, we can not use them both(unless we use Vue as a library).
+Though Laravel Blade and Vue are handy, we can not use both of them(unless we use Vue as a library).
 
 This leaves us two options to develop a admin site:
 
