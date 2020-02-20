@@ -79,6 +79,12 @@ abstract class Theme
         return $this;
     }
 
+    public function alias($path, $alias)
+    {
+        $this->component($path, $alias);
+        return $this;
+    }
+
     /**
      * compability for laravel framework version < 5.6
      * @param $path
