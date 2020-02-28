@@ -20,6 +20,10 @@
 <h1 class="mt-3">Default</h1>
 <fm-upload name="file1" action="/lvt/VueAdmin/example/fm_upload"></fm-upload>
 
+<h1 class="mt-3">Accept</h1>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept">detail</a>
+<fm-upload name="file1" action="/lvt/VueAdmin/example/fm_upload" accept="image/*"></fm-upload>
+
 <h1 class="mt-3">List type</h1>
 <fm-upload name="file1" action="/lvt/VueAdmin/example/fm_upload" list-type="none"></fm-upload>
 <fm-upload name="file1" action="/lvt/VueAdmin/example/fm_upload" list-type="text"></fm-upload>
