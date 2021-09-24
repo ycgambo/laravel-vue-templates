@@ -1,3 +1,6 @@
+# This repo is no longer maintained. :)
+
+
 
 # Laravel Vue Templates
 
